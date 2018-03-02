@@ -6,13 +6,29 @@ using UnityEngine;
 
 public class CarBehavior : Interactable
 {
+
     public override void Activate(GameObject player)
     {
-		ItemStorage playerStorage = player.GetComponent<ItemStorage>();
-		ItemStorage carStorage = GetComponent<ItemStorage>();
-		print("Adding " + playerStorage.items.Count + " items to car storage ");
-		carStorage.items.AddRange(playerStorage.items);
-		playerStorage.items.Clear();
-		print("Car storage count = " + carStorage.items.Count);
+        ItemStorage playerStorage = player.GetComponent<ItemStorage>();
+        ItemStorage carStorage = GetComponent<ItemStorage>();
+		if (playerStorage.items.Count > 0)
+		{
+			DialogService.Instance().Show(playerStorage.items.Count + " items thrown into car trunk", DialogService.ShortDuration);
+			carStorage.items.AddRange(playerStorage.items);
+			playerStorage.items.Clear();
+		}
+    }
+
+	public override void Hover(GameObject player)
+	{
+        ItemStorage playerStorage = player.GetComponent<ItemStorage>();
+		if (playerStorage.items.Count > 0)
+		{
+			DialogService.Instance().Show("Press E to throw " + playerStorage.items.Count + " items into car trunk");
+		}
+	}
+    public override void Exit(GameObject player)
+    {
+        DialogService.Instance().Clear();
     }
 }

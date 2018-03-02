@@ -11,11 +11,12 @@ public class Product : Interactable
     public float weight;
 
     SpriteRenderer sp { get { return GetComponent<SpriteRenderer>(); } }
+    BoxCollider2D coll { get { return GetComponent<BoxCollider2D>(); } }
 
     public bool Spawned
     {
         get { return sp.enabled; }
-        set { sp.enabled = value; }
+        set { sp.enabled = value; coll.enabled = value; }
     }
 
     void Start()
@@ -26,12 +27,18 @@ public class Product : Interactable
 
     public override void Activate(GameObject player)
     {
-		if (Spawned)
-		{
-			Spawned = false;
-			ItemStorage playerStorage = player.GetComponent<ItemStorage>();
-			playerStorage.items.Add(this);
-			print("Added item " + productName);
-		}
+		Spawned = false;
+		ItemStorage playerStorage = player.GetComponent<ItemStorage>();
+		playerStorage.items.Add(this);
+		DialogService.Instance().Show("Picked up " + productName, DialogService.ShortDuration);
+    }
+
+    public override void Hover(GameObject player)
+    {
+        DialogService.Instance().Show(productName + Environment.NewLine + "Press E to pickup");
+    }
+    public override void Exit(GameObject player)
+    {
+        DialogService.Instance().Clear();
     }
 }
