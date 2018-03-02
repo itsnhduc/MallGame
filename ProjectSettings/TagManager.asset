@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Product
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Camera
+  - Player
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: BG
+    uniqueID: 2777344731
+    locked: 0
+  - name: Stores
+    uniqueID: 4167074637
+    locked: 0
+  - name: Items
+    uniqueID: 3929901181
+    locked: 0
+  - name: Mid
+    uniqueID: 153646435
+    locked: 0
+  - name: Front
+    uniqueID: 1007353411
+    locked: 0
+  - name: HUD
+    uniqueID: 413436095
+    locked: 0
