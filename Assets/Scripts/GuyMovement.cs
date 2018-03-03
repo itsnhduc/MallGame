@@ -4,12 +4,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Guy : MonoBehaviour
+public class GuyMovement : MonoBehaviour
 {
-    public int speed;
+    public float speed;
     public int floorHeight;
 
-    public static Guy Instance { get { return FindObjectOfType<Guy>(); } }
+    public float speedOffset { get; set; }
+    public static GuyMovement Instance { get { return FindObjectOfType<GuyMovement>(); } }
 
     Rigidbody2D rb { get { return GetComponent<Rigidbody2D>(); } }
 
@@ -19,7 +20,7 @@ public class Guy : MonoBehaviour
     {
         set
         {
-            rb.velocity = value * speed;
+            rb.velocity = value * (speed + speedOffset);
             if (value != Vector2.zero)
             {
                 int rotY = value == Vector2.right ? 180 : 0;
@@ -46,6 +47,7 @@ public class Guy : MonoBehaviour
     void Start()
     {
         isInControl = true;
+        speedOffset = 0;
     }
 
     void Update()

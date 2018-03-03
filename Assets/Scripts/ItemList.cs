@@ -51,7 +51,7 @@ public class ItemList : MonoBehaviour
     private void _Render()
     {
         transform.localPosition = _originalLocalPos;
-        var guyItems = Guy.Instance.GetComponent<ItemStorage>().items.Select(p => p.productName);
+        var guyItems = GuyMovement.Instance.GetComponent<ItemStorage>().items.Select(p => p.productName);
         var remainingItems = Spawner.Instance.products.Where(p => p.Spawned).Select(p => p.productName);
         var guyItemInfo = guyItems.Select(p => new KeyValuePair<string, bool>(p, true));
         var remainingItemsInfo = remainingItems.Select(p => new KeyValuePair<string, bool>(p, false));

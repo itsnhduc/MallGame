@@ -37,7 +37,7 @@ public class ElevatorPanelBehaviors : MonoBehaviour
             {
                 IsActive = false;
                 ActiveFloor = -1;
-                Guy.Instance.isInControl = true;
+                GuyMovement.Instance.isInControl = true;
             }
 
             // select floor
@@ -50,9 +50,9 @@ public class ElevatorPanelBehaviors : MonoBehaviour
             bool useKey = Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Return);
             if (useKey)
             {
-                Guy.Instance.Floor = ActiveFloor;
+                GuyMovement.Instance.Floor = ActiveFloor;
                 ActiveFloor = -1;
-                Guy.Instance.isInControl = true;
+                GuyMovement.Instance.isInControl = true;
                 IsActive = false;
                 DialogService.Instance.Clear();
             }

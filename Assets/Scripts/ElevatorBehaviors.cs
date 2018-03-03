@@ -12,7 +12,7 @@ public class ElevatorBehaviors : Interactable
 
     public override void Activate()
     {
-        Guy.Instance.isInControl = false;
+        GuyMovement.Instance.isInControl = false;
         elevatorPanel.IsActive = true;
         elevatorPanel.ActiveFloor = floor;
     }

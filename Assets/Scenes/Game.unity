@@ -3191,7 +3191,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shoppingBagPrefab: {fileID: 1789171067286606, guid: 5052829c7a49e64499df706e9531c428,
     type: 2}
-  rnRange: {x: 0.5, y: 0.1}
+  weightMultiplier: 0.1
 --- !u!1001 &771284594
 Prefab:
   m_ObjectHideFlags: 0
@@ -5516,10 +5516,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1306325145}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3d3adf58d04dde4f96e9ffafc81754a, type: 3}
+  m_Script: {fileID: 11500000, guid: af07e0423e77354498c40ccff52685d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
+  speed: 7
   floorHeight: 10
 --- !u!50 &1306325149
 Rigidbody2D:
