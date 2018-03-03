@@ -13,7 +13,7 @@ public class CarBehavior : Interactable
         var guyCarry = FindObjectOfType<GuyCarry>();
 		if (guyCarry.Items.Count > 0)
 		{
-			DialogService.Instance.Show(guyCarry.Items.Count + " item(s) thrown into car trunk", DialogService.ShortDuration);
+			DialogService.Instance.Show(guyCarry.Items.Count + " item(s) dropped", DialogService.ShortDuration);
 			carStorage.items.AddRange(guyCarry.Items);
 			guyCarry.Clear();
 			ItemList.Instance.Refresh();
@@ -25,7 +25,7 @@ public class CarBehavior : Interactable
         var guyCarry = FindObjectOfType<GuyCarry>();
 		if (guyCarry.Items.Count > 0)
 		{
-			DialogService.Instance.Show("[E] Throw " + guyCarry.Items.Count + " items into car trunk");
+			DialogService.Instance.Show("[E] Drop " + guyCarry.Items.Count + " items");
 		}
 	}
     public override void Exit()

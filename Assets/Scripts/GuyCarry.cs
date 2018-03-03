@@ -26,7 +26,10 @@ public class GuyCarry : MonoBehaviour
 
     public void Clear()
     {
-        foreach (Transform bag in transform) Destroy(bag.gameObject);
+        while (transform.childCount != 0)
+        {
+            transform.GetChild(0).parent = null;
+        }
 		storage.items.Clear();
         _UpdateWeight();
     }
