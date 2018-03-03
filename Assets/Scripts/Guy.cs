@@ -4,10 +4,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GuyMovements : MonoBehaviour
+public class Guy : MonoBehaviour
 {
     public int speed;
     public int floorHeight;
+
+    public static Guy Instance { get { return FindObjectOfType<Guy>(); } }
 
     Rigidbody2D rb { get { return GetComponent<Rigidbody2D>(); } }
 

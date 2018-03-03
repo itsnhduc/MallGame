@@ -7,7 +7,6 @@ using UnityEngine;
 public class ElevatorPanelBehaviors : MonoBehaviour
 {
     SpriteRenderer sp { get { return GetComponent<SpriteRenderer>(); } }
-    GuyMovements guy { get { return FindObjectOfType<GuyMovements>(); } }
 
     public bool IsActive
     {
@@ -23,7 +22,7 @@ public class ElevatorPanelBehaviors : MonoBehaviour
         {
             if (_activeFloor != -1) transform.GetChild(_activeFloor).gameObject.SetActive(false);
             if (value != -1) transform.GetChild(value).gameObject.SetActive(true);
-            DialogService.Instance().Show("Going to " + (value > 0 ? "Floor " + value : "the Basement"));
+            DialogService.Instance.Show("[E] Going to " + (value > 0 ? "Floor " + value : "the Basement"));
             _activeFloor = value;
         }
     }
@@ -38,7 +37,7 @@ public class ElevatorPanelBehaviors : MonoBehaviour
             {
                 IsActive = false;
                 ActiveFloor = -1;
-                guy.isInControl = true;
+                Guy.Instance.isInControl = true;
             }
 
             // select floor
@@ -51,11 +50,11 @@ public class ElevatorPanelBehaviors : MonoBehaviour
             bool useKey = Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Return);
             if (useKey)
             {
-                guy.Floor = ActiveFloor;
+                Guy.Instance.Floor = ActiveFloor;
                 ActiveFloor = -1;
-                guy.isInControl = true;
+                Guy.Instance.isInControl = true;
                 IsActive = false;
-                DialogService.Instance().Clear();
+                DialogService.Instance.Clear();
             }
         }
     }

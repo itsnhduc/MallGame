@@ -25,20 +25,20 @@ public class Product : Interactable
         Spawned = true;
     }
 
-    public override void Activate(GameObject player)
+    public override void Activate()
     {
 		Spawned = false;
-		ItemStorage playerStorage = player.GetComponent<ItemStorage>();
+		ItemStorage playerStorage = Guy.Instance.GetComponent<ItemStorage>();
 		playerStorage.items.Add(this);
-		DialogService.Instance().Show("Picked up " + productName, DialogService.ShortDuration);
+		DialogService.Instance.Show("Picked up " + productName, DialogService.ShortDuration);
     }
 
-    public override void Hover(GameObject player)
+    public override void Hover()
     {
-        DialogService.Instance().Show(productName + Environment.NewLine + "Press E to pickup");
+        DialogService.Instance.Show(productName + Environment.NewLine + "[E] Pick up");
     }
-    public override void Exit(GameObject player)
+    public override void Exit()
     {
-        DialogService.Instance().Clear();
+        DialogService.Instance.Clear();
     }
 }

@@ -8,7 +8,6 @@ public abstract class Interactable : MonoBehaviour
 {
     public enum Type { Manual, AutoOnce }
 
-    GameObject player { get { return GameObject.FindGameObjectWithTag("Player"); } }
     DialogService dialog { get { return FindObjectOfType<DialogService>(); } }
 
     [Header("Interactable")]
@@ -20,7 +19,7 @@ public abstract class Interactable : MonoBehaviour
         get { return _activated; }
         set
         {
-            if (value) Activate(player);
+            if (value) Activate();
             _activated = value;
         }
     }
@@ -32,8 +31,8 @@ public abstract class Interactable : MonoBehaviour
         set
         {
             _isInRange = value;
-            if (_isInRange) Hover(player);
-            else Exit(player);
+            if (_isInRange) Hover();
+            else Exit();
         }
     }
 
@@ -46,7 +45,7 @@ public abstract class Interactable : MonoBehaviour
                 break;
             case Type.Manual:
                 bool useKey = Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Return);
-                if (useKey && IsInRange) Activate(player);
+                if (useKey && IsInRange) Activate();
                 break;
         }
     }
@@ -61,7 +60,7 @@ public abstract class Interactable : MonoBehaviour
         IsInRange = false;
     }
 
-    public virtual void Hover(GameObject player) { }
-    public virtual void Exit(GameObject player) { }
-    public abstract void Activate(GameObject player);
+    public virtual void Hover() { }
+    public virtual void Exit() { }
+    public abstract void Activate();
 }

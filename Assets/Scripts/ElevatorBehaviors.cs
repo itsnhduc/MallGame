@@ -10,10 +10,9 @@ public class ElevatorBehaviors : Interactable
 
     ElevatorPanelBehaviors elevatorPanel { get { return FindObjectOfType<ElevatorPanelBehaviors>(); } }
 
-    public override void Activate(GameObject player)
+    public override void Activate()
     {
-        GuyMovements guy = player.GetComponent<GuyMovements>();
-        guy.isInControl = false;
+        Guy.Instance.isInControl = false;
         elevatorPanel.IsActive = true;
         elevatorPanel.ActiveFloor = floor;
     }
