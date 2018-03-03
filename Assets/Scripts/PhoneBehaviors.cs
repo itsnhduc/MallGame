@@ -17,16 +17,20 @@ public class PhoneBehaviors : MonoBehaviour
         get { return _isShown; }
         set
         {
-            Guy.Instance.isInControl = !value;
-            if (_thread != null && IsShown != value) StopCoroutine(_thread);
-            _thread = Move(value);
-            StartCoroutine(_thread);
+            if (IsShown != value)
+            {
+                Cover.Instance.IsOn = value;
+                Guy.Instance.isInControl = !value;
+                if (_thread != null && IsShown != value) StopCoroutine(_thread);
+                _thread = Move(value);
+                StartCoroutine(_thread);
+            }
         }
     }
 
     void Start()
     {
-        IsShown = true;
+        IsShown = false;
     }
 
     void Update()

@@ -31,6 +31,7 @@ public class Product : Interactable
 		ItemStorage playerStorage = Guy.Instance.GetComponent<ItemStorage>();
 		playerStorage.items.Add(this);
 		DialogService.Instance.Show("Picked up " + productName, DialogService.ShortDuration);
+        ItemList.Instance.Refresh();
     }
 
     public override void Hover()

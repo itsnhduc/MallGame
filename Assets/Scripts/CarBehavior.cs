@@ -16,6 +16,7 @@ public class CarBehavior : Interactable
 			DialogService.Instance.Show(playerStorage.items.Count + " item(s) thrown into car trunk", DialogService.ShortDuration);
 			carStorage.items.AddRange(playerStorage.items);
 			playerStorage.items.Clear();
+			ItemList.Instance.Refresh();
 		}
     }
 

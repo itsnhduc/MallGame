@@ -6,10 +6,6 @@ using UnityEngine;
 
 public class ItemStorage : MonoBehaviour
 {
-    public List<Product> items { get; private set; }
-
-	void Start()
-	{
-		items = new List<Product>();
-	}
+    private List<Product> _items = new List<Product>();
+    public List<Product> items { get { return _items; } }
 }
