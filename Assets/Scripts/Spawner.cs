@@ -6,20 +6,40 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
+    public float startSpawnDuration;
+    public float spawnDurationDecay;
+
     public List<Product> products { get; private set; }
 
     public static Spawner Instance { get { return FindObjectOfType<Spawner>(); } }
 
+    private float _spawnDuration;
+
     void Start()
     {
         products = FindObjectsOfType<Product>().ToList().OrderBy(p => p.weight).ToList();
-        ItemList.Instance.Refresh();
+        _spawnDuration = startSpawnDuration;
         StartCoroutine(StartSpawning());
     }
 
     IEnumerator StartSpawning()
     {
-        // do stuff
-        yield return null;
+        while (true)
+        {
+            var remainingItems = products.Where(p => !p.Spawned);
+            if (remainingItems.Count() > 0)
+            {
+                PickNextItem(remainingItems).Spawned = true;
+            }
+            ItemList.Instance.Refresh();
+            yield return new WaitForSeconds(_spawnDuration);
+            _spawnDuration -= spawnDurationDecay;
+        }
+    }
+
+    private Product PickNextItem(IEnumerable<Product> items)
+    {
+        int nextItemRn = UnityEngine.Random.Range(0, items.Count());
+        return items.ElementAt(nextItemRn);
     }
 }

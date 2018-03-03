@@ -20,7 +20,6 @@ public class ItemList : MonoBehaviour
     void Start()
     {
         _originalLocalPos = transform.localPosition;
-        _Clear();
     }
 
     void Update()

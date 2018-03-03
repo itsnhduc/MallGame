@@ -16,21 +16,19 @@ public class Product : Interactable
     public bool Spawned
     {
         get { return sp.enabled; }
-        set { sp.enabled = value; coll.enabled = value; }
-    }
-
-    void Start()
-    {
-        // Spawned = false;
-        Spawned = true;
+        set
+        {
+            sp.enabled = value;
+            coll.enabled = value;
+        }
     }
 
     public override void Activate()
     {
-		Spawned = false;
-		ItemStorage playerStorage = Guy.Instance.GetComponent<ItemStorage>();
-		playerStorage.items.Add(this);
-		DialogService.Instance.Show("Picked up " + productName, DialogService.ShortDuration);
+        Spawned = false;
+        ItemStorage playerStorage = Guy.Instance.GetComponent<ItemStorage>();
+        playerStorage.items.Add(this);
+        DialogService.Instance.Show("Picked up " + productName, DialogService.ShortDuration);
         ItemList.Instance.Refresh();
     }
 
