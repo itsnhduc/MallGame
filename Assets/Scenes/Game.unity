@@ -4295,7 +4295,7 @@ MonoBehaviour:
     m_LineSpacing: 1.58
   m_Text: 'Harvey Norman
 
-    Gong Cha
+    Starbucks
 
     Long John Silvers'
 --- !u!222 &725894934
@@ -5329,7 +5329,7 @@ GameObject:
   - component: {fileID: 855492209}
   - component: {fileID: 855492210}
   m_Layer: 0
-  m_Name: GongCha
+  m_Name: Starbucks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5342,8 +5342,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 855492208}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.056, y: 30.015, z: 0}
-  m_LocalScale: {x: 1.1166521, y: 1.1330664, z: 1}
+  m_LocalPosition: {x: 0.026, y: 30.016, z: 0}
+  m_LocalScale: {x: 1.1542113, y: 0.84288025, z: 1}
   m_Children:
   - {fileID: 848962272}
   - {fileID: 473694447}
@@ -5387,7 +5387,7 @@ SpriteRenderer:
   m_SortingLayerID: -127892659
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 1a8d32a2f6143ba49a30767e93616b84, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2eded7b9184cbb04aa3f2fa7edb4602a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5999,7 +5999,7 @@ MonoBehaviour:
     m_LineSpacing: 1.58
   m_Text: 'Harvey Norman
 
-    Gong Cha
+    Starbucks
 
     Long John Silvers'
 --- !u!222 &945938264
