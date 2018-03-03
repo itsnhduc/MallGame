@@ -26,8 +26,8 @@ public class Product : Interactable
     public override void Activate()
     {
         Spawned = false;
-        ItemStorage playerStorage = Guy.Instance.GetComponent<ItemStorage>();
-        playerStorage.items.Add(this);
+        var guyCarry = FindObjectOfType<GuyCarry>();
+        guyCarry.Add(this);
         DialogService.Instance.Show("Picked up " + productName, DialogService.ShortDuration);
         ItemList.Instance.Refresh();
     }

@@ -9,23 +9,23 @@ public class CarBehavior : Interactable
 
     public override void Activate()
     {
-        ItemStorage playerStorage = Guy.Instance.GetComponent<ItemStorage>();
-        ItemStorage carStorage = GetComponent<ItemStorage>();
-		if (playerStorage.items.Count > 0)
+        var carStorage = GetComponent<ItemStorage>();
+        var guyCarry = FindObjectOfType<GuyCarry>();
+		if (guyCarry.Items.Count > 0)
 		{
-			DialogService.Instance.Show(playerStorage.items.Count + " item(s) thrown into car trunk", DialogService.ShortDuration);
-			carStorage.items.AddRange(playerStorage.items);
-			playerStorage.items.Clear();
+			DialogService.Instance.Show(guyCarry.Items.Count + " item(s) thrown into car trunk", DialogService.ShortDuration);
+			carStorage.items.AddRange(guyCarry.Items);
+			guyCarry.Clear();
 			ItemList.Instance.Refresh();
 		}
     }
 
 	public override void Hover()
 	{
-        ItemStorage playerStorage = Guy.Instance.GetComponent<ItemStorage>();
-		if (playerStorage.items.Count > 0)
+        var guyCarry = FindObjectOfType<GuyCarry>();
+		if (guyCarry.Items.Count > 0)
 		{
-			DialogService.Instance.Show("[E] Throw " + playerStorage.items.Count + " items into car trunk");
+			DialogService.Instance.Show("[E] Throw " + guyCarry.Items.Count + " items into car trunk");
 		}
 	}
     public override void Exit()
