@@ -8,19 +8,29 @@ public class GuyMovement : MonoBehaviour
 {
     public float speed;
     public int floorHeight;
+    public float staminaBaseDecrease;
+    public float staminaModifier;
+    public float staminaRegen;
+    public float staminaDrainDuration;
+    public float haltDuration;
+    public Sprite haltSprite;
 
     public float speedOffset { get; set; }
+    public bool isInControl { get; set; }
+
     public static GuyMovement Instance { get { return FindObjectOfType<GuyMovement>(); } }
 
     Rigidbody2D rb { get { return GetComponent<Rigidbody2D>(); } }
+    SpriteRenderer sr { get { return GetComponent<SpriteRenderer>(); } }
+    public float TrueSpeed { get { return speed + speedOffset; } }
 
-    public bool isInControl { get; set; }
+    private Sprite _originalSprite;
 
     public Vector2 MoveDirection
     {
         set
         {
-            rb.velocity = value * (speed + speedOffset);
+            rb.velocity = value * TrueSpeed;
             if (value != Vector2.zero)
             {
                 int rotY = value == Vector2.right ? 180 : 0;
@@ -44,14 +54,30 @@ public class GuyMovement : MonoBehaviour
         }
     }
 
+    public bool IsHalted
+    {
+        set
+        {
+            isInControl = !value;
+            sr.sprite = value ? haltSprite : _originalSprite;
+        }
+    }
+
     void Start()
     {
+        _originalSprite = sr.sprite;
         isInControl = true;
         speedOffset = 0;
+        StartCoroutine(DrainStamina());
     }
 
     void Update()
     {
+        if (StaminaSlider.Instance.Percentage <= 0.001f)
+        {
+            StartCoroutine(Halt());
+        }
+
         if (isInControl)
         {
             bool leftKey = Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A);
@@ -62,5 +88,29 @@ public class GuyMovement : MonoBehaviour
         {
             MoveDirection = Vector2.zero;
         }
+    }
+
+    IEnumerator DrainStamina()
+    {
+        while (true)
+        {
+            if (rb.velocity != Vector2.zero)
+            {
+                float offset = staminaBaseDecrease + staminaModifier * Mathf.Abs(speedOffset);
+                StaminaSlider.Instance.Percentage -= offset;
+            }
+            else
+            {
+                StaminaSlider.Instance.Percentage += staminaRegen;
+            }
+            yield return new WaitForSeconds(staminaDrainDuration);
+        }
+    }
+
+    IEnumerator Halt()
+    {
+        IsHalted = true;
+        yield return new WaitForSeconds(haltDuration);
+        IsHalted = false;
     }
 }
