@@ -61,3 +61,6 @@ TagManager:
   - name: HUD
     uniqueID: 413436095
     locked: 0
+  - name: StateOverlay
+    uniqueID: 3613977593
+    locked: 0

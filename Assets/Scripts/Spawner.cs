@@ -10,7 +10,7 @@ public class Spawner : Singleton<Spawner>
     public float minSpawnDuration;
     public float spawnDurationDecay;
     public float urgentThreshold;
-    // public float deadThreshold;
+    public float deadThreshold;
 
     public List<Product> products { get; private set; }
 
@@ -34,7 +34,12 @@ public class Spawner : Singleton<Spawner>
             }
             ItemList.Instance.Refresh();
             NewItemMark.Instance.IsShown = true;
-            NewItemMark.Instance.IsUrgent = products.Where(p => p.Spawned).Count() >= urgentThreshold;
+            int spawnedCount = products.Where(p => p.Spawned).Count();
+            NewItemMark.Instance.IsUrgent = spawnedCount > urgentThreshold;
+            if (spawnedCount > deadThreshold)
+            {
+                GameMaster.Instance.State = GameMaster.GameState.AfterGame;
+            } 
             yield return new WaitForSeconds(_spawnDuration);
             if (_spawnDuration > minSpawnDuration)
             {

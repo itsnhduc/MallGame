@@ -25,7 +25,7 @@ public class BusMovement : MonoBehaviour
 
 		if (!isGoingRight) sr.sprite = goLeftSprite;
 		sr.sortingOrder = zIndex;
-		transform.localPosition = new Vector2(sign * offsetX, transform.localPosition.y + offsetY * zIndex);
+		transform.localPosition = new Vector2(sign * offsetX, transform.localPosition.y + offsetY * -zIndex);
 		rb.velocity = -sign * Vector2.right * speed;
     }
 
