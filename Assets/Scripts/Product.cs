@@ -9,6 +9,7 @@ public class Product : Interactable
     [Header("Product")]
     public string productName;
     public int weight;
+    public Sprite icon;
 
     public const float buyDuration = 1.5f;
     public const float moveY = 0.5f;

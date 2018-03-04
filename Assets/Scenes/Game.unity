@@ -13569,7 +13569,7 @@ MonoBehaviour:
   listItemPrefab: {fileID: 1117757801453536, guid: d67e800e9850b6948a258359a93630c3,
     type: 2}
   speed: 5
-  minScrollNumber: 16
+  minScrollNumber: 15
 --- !u!4 &1972382460 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4536756047485640, guid: 7799f7af93f1d4c4281254869e4e8307,
