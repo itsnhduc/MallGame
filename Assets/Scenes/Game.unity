@@ -2116,6 +2116,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   happySprite: {fileID: 21300006, guid: d0830e63ec2330f489eac64b2fba8a60, type: 3}
   happyDuration: 2
+  shakeAngle: 8
+  shakeInterval: 0.25
 --- !u!1001 &299516887
 Prefab:
   m_ObjectHideFlags: 0
