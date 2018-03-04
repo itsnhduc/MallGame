@@ -61,6 +61,15 @@ public class GuyMovement : Singleton<GuyMovement>
         }
     }
 
+    public bool IsEnabled
+    {
+        set
+        {
+            sr.enabled = value;
+            IsInControl = value;
+        }
+    }
+
     void Start()
     {
         _originalSprite = sr.sprite;

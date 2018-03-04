@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class DialogService : Singleton<DialogService>
 {
-    public const float ShortDuration = 0.8f;
+    public const float ShortDuration = 1f;
 
     Text t { get { return GetComponent<Text>(); } }
 

@@ -4,7 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GuyCarry : MonoBehaviour
+public class GuyCarry : Singleton<GuyCarry>
 {
     public GameObject shoppingBagPrefab;
     public float weightMultiplier;
