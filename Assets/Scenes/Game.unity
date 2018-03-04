@@ -7203,7 +7203,7 @@ Prefab:
     - target: {fileID: 114434546149881556, guid: d4fb0b27dc151b24f8dc8cf4a2219e24,
         type: 2}
       propertyPath: productName
-      value: Cheat SHeet Papers
+      value: Cheat Sheet Papers
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d4fb0b27dc151b24f8dc8cf4a2219e24, type: 2}
@@ -8316,8 +8316,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e495aa5323a1d5428103e32c832e2d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startSpawnDuration: 8
-  spawnDurationDecay: 0.2
+  startSpawnDuration: 12
+  minSpawnDuration: 2
+  spawnDurationDecay: 0.25
   urgentThreshold: 15
 --- !u!1 &1249761040
 GameObject:

@@ -7,6 +7,7 @@ using UnityEngine;
 public class Spawner : Singleton<Spawner>
 {
     public float startSpawnDuration;
+    public float minSpawnDuration;
     public float spawnDurationDecay;
     public float urgentThreshold;
     // public float deadThreshold;
@@ -35,7 +36,10 @@ public class Spawner : Singleton<Spawner>
             NewItemMark.Instance.IsShown = true;
             NewItemMark.Instance.IsUrgent = products.Where(p => p.Spawned).Count() >= urgentThreshold;
             yield return new WaitForSeconds(_spawnDuration);
-            _spawnDuration -= spawnDurationDecay;
+            if (_spawnDuration > minSpawnDuration)
+            {
+                _spawnDuration = Mathf.Max(_spawnDuration - spawnDurationDecay, minSpawnDuration);
+            }
         }
     }
 
