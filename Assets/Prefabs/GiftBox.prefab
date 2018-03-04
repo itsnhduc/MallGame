@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212528361224816970}
   - component: {fileID: 114434546149881556}
   - component: {fileID: 61923459430910002}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: GiftBox
   m_TagString: Product
   m_Icon: {fileID: 0}

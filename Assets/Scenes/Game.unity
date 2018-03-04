@@ -13097,7 +13097,7 @@ GameObject:
   - component: {fileID: 1975834501}
   - component: {fileID: 1975834502}
   - component: {fileID: 1975834503}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: DropZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
