@@ -15,14 +15,14 @@ public class GuyMovement : MonoBehaviour
     public float haltDuration;
     public Sprite haltSprite;
 
-    public float speedOffset { get; set; }
-    public bool isInControl { get; set; }
+    public float SpeedOffset { get; set; }
+    public bool IsInControl { get; set; }
 
     public static GuyMovement Instance { get { return FindObjectOfType<GuyMovement>(); } }
 
     Rigidbody2D rb { get { return GetComponent<Rigidbody2D>(); } }
     SpriteRenderer sr { get { return GetComponent<SpriteRenderer>(); } }
-    public float TrueSpeed { get { return speed + speedOffset; } }
+    public float TrueSpeed { get { return speed + SpeedOffset; } }
 
     private Sprite _originalSprite;
 
@@ -58,7 +58,7 @@ public class GuyMovement : MonoBehaviour
     {
         set
         {
-            isInControl = !value;
+            IsInControl = !value;
             sr.sprite = value ? haltSprite : _originalSprite;
         }
     }
@@ -66,8 +66,8 @@ public class GuyMovement : MonoBehaviour
     void Start()
     {
         _originalSprite = sr.sprite;
-        isInControl = true;
-        speedOffset = 0;
+        IsInControl = true;
+        SpeedOffset = 0;
         StartCoroutine(DrainStamina());
     }
 
@@ -78,7 +78,7 @@ public class GuyMovement : MonoBehaviour
             StartCoroutine(Halt());
         }
 
-        if (isInControl)
+        if (IsInControl)
         {
             bool leftKey = Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A);
             bool rightKey = Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D);
@@ -96,7 +96,7 @@ public class GuyMovement : MonoBehaviour
         {
             if (rb.velocity != Vector2.zero)
             {
-                float offset = staminaBaseDecrease + staminaModifier * Mathf.Abs(speedOffset);
+                float offset = staminaBaseDecrease + staminaModifier * Mathf.Abs(SpeedOffset);
                 StaminaSlider.Instance.Percentage -= offset;
             }
             else

@@ -36,7 +36,7 @@ public class GuyCarry : MonoBehaviour
 
     private void _UpdateWeight()
     {
-        GuyMovement.Instance.speedOffset = -1 * _GetTotalWeight() * weightMultiplier;
+        GuyMovement.Instance.SpeedOffset = -1 * _GetTotalWeight() * weightMultiplier;
     }
 
     private float _GetTotalWeight()

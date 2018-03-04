@@ -11,7 +11,11 @@ public class ElevatorPanelBehaviors : MonoBehaviour
     public bool IsActive
     {
         get { return sp.enabled; }
-        set { sp.enabled = value; }
+        set
+        {
+            sp.enabled = value;
+            PhoneBehaviors.Instance.IsEnabled = !value;
+        }
     }
 
     private int _activeFloor;
@@ -37,7 +41,7 @@ public class ElevatorPanelBehaviors : MonoBehaviour
             {
                 IsActive = false;
                 ActiveFloor = -1;
-                GuyMovement.Instance.isInControl = true;
+                GuyMovement.Instance.IsInControl = true;
             }
 
             // select floor
@@ -52,7 +56,7 @@ public class ElevatorPanelBehaviors : MonoBehaviour
             {
                 GuyMovement.Instance.Floor = ActiveFloor;
                 ActiveFloor = -1;
-                GuyMovement.Instance.isInControl = true;
+                GuyMovement.Instance.IsInControl = true;
                 IsActive = false;
                 DialogService.Instance.Clear();
             }

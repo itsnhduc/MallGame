@@ -11,6 +11,10 @@ public class PhoneBehaviors : MonoBehaviour
 
     private IEnumerator _thread;
 
+    public static PhoneBehaviors Instance { get { return FindObjectOfType<PhoneBehaviors>(); } }
+
+    public bool IsEnabled { get; set; }
+
     private bool _isShown;
     public bool IsShown
     {
@@ -21,7 +25,7 @@ public class PhoneBehaviors : MonoBehaviour
             {
                 NewItemMark.Instance.IsShown = false;
                 Cover.Instance.IsOn = value;
-                GuyMovement.Instance.isInControl = !value;
+                GuyMovement.Instance.IsInControl = !value;
                 if (_thread != null && IsShown != value) StopCoroutine(_thread);
                 _thread = Move(value);
                 StartCoroutine(_thread);
@@ -31,23 +35,24 @@ public class PhoneBehaviors : MonoBehaviour
 
     void Start()
     {
+        IsEnabled = true;
         IsShown = false;
     }
 
     void Update()
     {
         bool showKey = Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift);
-        if (showKey) IsShown = !IsShown;
+        if (showKey && IsEnabled) IsShown = !IsShown;
     }
 
     IEnumerator Move(bool isShowing)
     {
-		Rigidbody2D camRb = Camera.main.GetComponent<Rigidbody2D>();
+        Rigidbody2D camRb = Camera.main.GetComponent<Rigidbody2D>();
         while (camRb.velocity != Vector2.zero)
         {
             yield return new WaitForEndOfFrame();
         }
-		_isShown = isShowing;
+        _isShown = isShowing;
         Vector2 targetPos = (Vector2)transform.position + new Vector2(0, showOffsetY * (isShowing ? 1 : -1));
         float timeDelta = 0.01f;
         float timePassed = 0;
