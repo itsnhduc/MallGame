@@ -26,6 +26,7 @@ public class GuyMovement : Singleton<GuyMovement>
 
     public Vector2 MoveDirection
     {
+        get { return rb.velocity.normalized; }
         set
         {
             rb.velocity = value * TrueSpeed;
