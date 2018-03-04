@@ -8545,7 +8545,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e495aa5323a1d5428103e32c832e2d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startSpawnDuration: 12
+  startSpawnDuration: 10
   minSpawnDuration: 2
   spawnDurationDecay: 0.25
   urgentThreshold: 15
@@ -12955,7 +12955,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1087, y: -1170}
+  m_AnchoredPosition: {x: 1133, y: -1170}
   m_SizeDelta: {x: 631.19, y: 160.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1935086017
@@ -13075,6 +13075,7 @@ MonoBehaviour:
   listItemPrefab: {fileID: 1117757801453536, guid: d67e800e9850b6948a258359a93630c3,
     type: 2}
   speed: 5
+  minScrollNumber: 16
 --- !u!4 &1972382460 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4536756047485640, guid: 7799f7af93f1d4c4281254869e4e8307,
