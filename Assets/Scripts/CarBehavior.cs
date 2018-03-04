@@ -17,6 +17,7 @@ public class CarBehavior : Interactable
 			carStorage.items.AddRange(guyCarry.Items);
 			guyCarry.Clear();
 			ItemList.Instance.Refresh();
+			GalBehaviors.Instance.BecomeHappy();
 		}
     }
 

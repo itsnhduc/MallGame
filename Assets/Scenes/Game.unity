@@ -1917,6 +1917,7 @@ GameObject:
   m_Component:
   - component: {fileID: 293823030}
   - component: {fileID: 293823029}
+  - component: {fileID: 293823031}
   m_Layer: 0
   m_Name: Gal
   m_TagString: Untagged
@@ -1981,6 +1982,19 @@ Transform:
   m_Father: {fileID: 2116239318}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &293823031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 293823028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17ca0db6cef86454f938bc9904f4c247, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  happySprite: {fileID: 21300006, guid: d0830e63ec2330f489eac64b2fba8a60, type: 3}
+  happyDuration: 2
 --- !u!1001 &299516887
 Prefab:
   m_ObjectHideFlags: 0
@@ -8857,7 +8871,7 @@ MonoBehaviour:
   staminaRegen: 0.2
   staminaDrainDuration: 0.02
   haltDuration: 2
-  haltSprite: {fileID: 21300004, guid: 8986a4ba554072c42b9dac04de4ea3e4, type: 3}
+  haltSprite: {fileID: 21300004, guid: d0830e63ec2330f489eac64b2fba8a60, type: 3}
 --- !u!50 &1306325149
 Rigidbody2D:
   serializedVersion: 4
@@ -12831,8 +12845,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1975834498}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.579, y: -0.7678, z: 0}
-  m_LocalScale: {x: 0.3527847, y: 0.61509085, z: 0.40126318}
+  m_LocalPosition: {x: -1.2891, y: -0.7678, z: 0}
+  m_LocalScale: {x: 0.18805876, y: 0.61509085, z: 0.40126318}
   m_Children: []
   m_Father: {fileID: 445391473}
   m_RootOrder: 6
