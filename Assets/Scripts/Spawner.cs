@@ -8,6 +8,8 @@ public class Spawner : MonoBehaviour
 {
     public float startSpawnDuration;
     public float spawnDurationDecay;
+    public float urgentThreshold;
+    // public float deadThreshold;
 
     public List<Product> products { get; private set; }
 
@@ -32,6 +34,8 @@ public class Spawner : MonoBehaviour
                 PickNextItem(remainingItems).Spawned = true;
             }
             ItemList.Instance.Refresh();
+            NewItemMark.Instance.IsShown = true;
+            NewItemMark.Instance.IsUrgent = products.Where(p => p.Spawned).Count() >= urgentThreshold;
             yield return new WaitForSeconds(_spawnDuration);
             _spawnDuration -= spawnDurationDecay;
         }

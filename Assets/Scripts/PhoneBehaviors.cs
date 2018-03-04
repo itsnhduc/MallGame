@@ -19,6 +19,7 @@ public class PhoneBehaviors : MonoBehaviour
         {
             if (IsShown != value)
             {
+                NewItemMark.Instance.IsShown = false;
                 Cover.Instance.IsOn = value;
                 GuyMovement.Instance.isInControl = !value;
                 if (_thread != null && IsShown != value) StopCoroutine(_thread);
