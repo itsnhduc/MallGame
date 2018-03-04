@@ -19,6 +19,7 @@ public class CarBehavior : Interactable
 			ItemList.Instance.Refresh();
 			GalBehaviors.Instance.BecomeHappy();
 		}
+		TotalWeightDisplay.Instance.Value = carStorage.items.Select(p => p.weight).Sum();
     }
 
 	public override void Hover()
