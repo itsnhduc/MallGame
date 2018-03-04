@@ -5,11 +5,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Cover : MonoBehaviour
+public class Cover : Singleton<Cover>
 {
     Image i { get { return GetComponent<Image>(); } }
-
-    public static Cover Instance { get { return FindObjectOfType<Cover>(); } }
 
     public bool IsOn
     {

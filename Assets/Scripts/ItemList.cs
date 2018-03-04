@@ -4,14 +4,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemList : MonoBehaviour
+public class ItemList : Singleton<ItemList>
 {
     public GameObject listItemPrefab;
     public float speed;
 
     Rigidbody2D rb { get { return GetComponent<Rigidbody2D>(); } }
-
-    public static ItemList Instance { get { return FindObjectOfType<ItemList>(); } }
 
     public Vector2 MoveDirection { set { rb.velocity = value * speed; } }
 

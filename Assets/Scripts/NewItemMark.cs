@@ -5,13 +5,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class NewItemMark : MonoBehaviour
+public class NewItemMark : Singleton<NewItemMark>
 {
     public float fadeAmount;
 
     Image i { get { return GetComponent<Image>(); } }
-
-    public static NewItemMark Instance { get { return FindObjectOfType<NewItemMark>(); } }
 
     private IEnumerator _thread;
 

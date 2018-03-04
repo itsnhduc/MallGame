@@ -4,7 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Spawner : MonoBehaviour
+public class Spawner : Singleton<Spawner>
 {
     public float startSpawnDuration;
     public float spawnDurationDecay;
@@ -12,8 +12,6 @@ public class Spawner : MonoBehaviour
     // public float deadThreshold;
 
     public List<Product> products { get; private set; }
-
-    public static Spawner Instance { get { return FindObjectOfType<Spawner>(); } }
 
     private float _spawnDuration;
 

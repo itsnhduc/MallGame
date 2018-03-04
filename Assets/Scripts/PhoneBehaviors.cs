@@ -4,14 +4,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PhoneBehaviors : MonoBehaviour
+public class PhoneBehaviors : Singleton<PhoneBehaviors>
 {
     public float showOffsetY;
     public float speedMultiplier;
 
     private IEnumerator _thread;
-
-    public static PhoneBehaviors Instance { get { return FindObjectOfType<PhoneBehaviors>(); } }
 
     public bool IsEnabled { get; set; }
 

@@ -5,11 +5,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class StaminaSlider : MonoBehaviour
+public class StaminaSlider : Singleton<StaminaSlider>
 {
     Slider s { get { return GetComponent<Slider>(); } }
-
-    public static StaminaSlider Instance { get { return FindObjectOfType<StaminaSlider>(); } }
 
     public float Percentage
     {

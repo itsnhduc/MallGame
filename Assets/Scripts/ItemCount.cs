@@ -5,10 +5,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ItemCount : MonoBehaviour
+public class ItemCount : Singleton<ItemCount>
 {
     Text t { get { return GetComponent<Text>(); } }
-    public static ItemCount Instance { get { return FindObjectOfType<ItemCount>(); } }
 
     public int Count { set { t.text = value.ToString(); } }
 }

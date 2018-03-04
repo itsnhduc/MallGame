@@ -4,7 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GuyMovement : MonoBehaviour
+public class GuyMovement : Singleton<GuyMovement>
 {
     public float speed;
     public int floorHeight;
@@ -17,8 +17,6 @@ public class GuyMovement : MonoBehaviour
 
     public float SpeedOffset { get; set; }
     public bool IsInControl { get; set; }
-
-    public static GuyMovement Instance { get { return FindObjectOfType<GuyMovement>(); } }
 
     Rigidbody2D rb { get { return GetComponent<Rigidbody2D>(); } }
     SpriteRenderer sr { get { return GetComponent<SpriteRenderer>(); } }

@@ -5,13 +5,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DialogService : MonoBehaviour
+public class DialogService : Singleton<DialogService>
 {
     public const float ShortDuration = 0.8f;
 
     Text t { get { return GetComponent<Text>(); } }
-
-    public static DialogService Instance { get { return FindObjectOfType<DialogService>(); } }
 
     public string DialogText
     {
