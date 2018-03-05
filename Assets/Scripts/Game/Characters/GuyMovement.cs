@@ -97,6 +97,8 @@ public class GuyMovement : Singleton<GuyMovement>
         {
             MoveDirection = Vector2.zero;
         }
+
+        BackgroundMusic.Instance.Pitch = TrueSpeed / speed;
     }
 
     IEnumerator DrainStamina()
