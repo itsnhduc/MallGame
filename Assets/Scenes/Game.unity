@@ -5158,7 +5158,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shoppingBagPrefab: {fileID: 1789171067286606, guid: 5052829c7a49e64499df706e9531c428,
     type: 2}
-  weightMultiplier: 0.1
+  weightMultiplier: 0.3
 --- !u!1001 &771284594
 Prefab:
   m_ObjectHideFlags: 0
@@ -9264,7 +9264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e495aa5323a1d5428103e32c832e2d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startSpawnDuration: 10
+  startSpawnDuration: 2
   minSpawnDuration: 2
   spawnDurationDecay: 0.25
   urgentThreshold: 15
@@ -10024,7 +10024,7 @@ MonoBehaviour:
   floorHeight: 10
   staminaBaseDecrease: 0.01
   staminaModifier: 0.1
-  staminaRegen: 0.2
+  staminaRegen: 0.4
   staminaDrainDuration: 0.02
   haltDuration: 2
   haltSprite: {fileID: 21300004, guid: d0830e63ec2330f489eac64b2fba8a60, type: 3}
@@ -14543,8 +14543,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c067552b5bceb6c4aa2f602c10da930a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minScrollNumber: 15
-  speed: 2
+  minScrollNumber: 11
+  speed: 3
 --- !u!4 &1972382460 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4536756047485640, guid: 7799f7af93f1d4c4281254869e4e8307,
