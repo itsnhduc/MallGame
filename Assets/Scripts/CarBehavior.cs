@@ -17,7 +17,6 @@ public class CarBehavior : Interactable
 			carStorage.items.AddRange(guyCarry.Items);
 			guyCarry.Items.ForEach(p => ItemList.Instance.Remove(p.productName));
 			guyCarry.Clear();
-			// ItemList.Instance.Refresh();
 			GalBehaviors.Instance.BecomeHappy();
 		}
 		TotalWeightDisplay.Instance.Value = carStorage.items.Select(p => p.weight).Sum();

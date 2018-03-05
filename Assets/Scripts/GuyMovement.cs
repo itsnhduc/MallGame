@@ -20,7 +20,7 @@ public class GuyMovement : Singleton<GuyMovement>
 
     Rigidbody2D rb { get { return GetComponent<Rigidbody2D>(); } }
     SpriteRenderer sr { get { return GetComponent<SpriteRenderer>(); } }
-    public float TrueSpeed { get { return speed + SpeedOffset; } }
+    public float TrueSpeed { get { return Mathf.Max(speed + SpeedOffset, 0); } }
 
     private Sprite _originalSprite;
 
