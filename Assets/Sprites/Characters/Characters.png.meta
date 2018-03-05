@@ -8,6 +8,8 @@ TextureImporter:
     21300002: Characters_1
     21300004: Characters_2
     21300006: Characters_3
+    21300008: Characters_4
+    21300010: Characters_5
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -118,7 +120,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
+        y: 400
         width: 400
         height: 400
       alignment: 0
@@ -132,7 +134,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 400
-        y: 0
+        y: 400
         width: 400
         height: 400
       alignment: 0
@@ -146,7 +148,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 800
-        y: 0
+        y: 400
         width: 400
         height: 400
       alignment: 0
@@ -160,6 +162,34 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1200
+        y: 400
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Characters_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Characters_5
+      rect:
+        serializedVersion: 2
+        x: 400
         y: 0
         width: 400
         height: 400

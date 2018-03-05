@@ -5346,6 +5346,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88a1c8c70a3f29945aa8d44737bec653, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tiredThreshold: 50
 --- !u!1 &781812826
 GameObject:
   m_ObjectHideFlags: 0
@@ -10155,6 +10156,7 @@ MonoBehaviour:
   staminaRegen: 0.4
   staminaDrainDuration: 0.02
   haltDuration: 2
+  tiredSprite: {fileID: 21300008, guid: d0830e63ec2330f489eac64b2fba8a60, type: 3}
   haltSprite: {fileID: 21300004, guid: d0830e63ec2330f489eac64b2fba8a60, type: 3}
   haltSound: {fileID: 8300000, guid: 1094c8365e698df448f3628aef38ae3c, type: 3}
 --- !u!50 &1306325149
@@ -10260,8 +10262,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 153646435
-  m_SortingLayer: 4
+  m_SortingLayerID: 1007353411
+  m_SortingLayer: 5
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: de4700522eb6b214d9f840d6ebdf3a5f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

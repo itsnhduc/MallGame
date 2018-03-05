@@ -13,6 +13,7 @@ public class GuyMovement : Singleton<GuyMovement>
     public float staminaRegen;
     public float staminaDrainDuration;
     public float haltDuration;
+    public Sprite tiredSprite;
     public Sprite haltSprite;
     public AudioClip haltSound;
 
@@ -56,6 +57,7 @@ public class GuyMovement : Singleton<GuyMovement>
 
     public bool IsHalted
     {
+        get { return sr.sprite == haltSprite; }
         set
         {
             IsInControl = !value;
@@ -69,6 +71,14 @@ public class GuyMovement : Singleton<GuyMovement>
         {
             sr.enabled = value;
             IsInControl = value;
+        }
+    }
+
+    public bool IsTired
+    {
+        set
+        {
+            if (!IsHalted) sr.sprite = value ? tiredSprite : _originalSprite;
         }
     }
 
