@@ -14543,8 +14543,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c067552b5bceb6c4aa2f602c10da930a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minScrollNumber: 15
-  speed: 2
+  minScrollNumber: 11
+  speed: 3
 --- !u!4 &1972382460 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4536756047485640, guid: 7799f7af93f1d4c4281254869e4e8307,

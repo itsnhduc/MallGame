@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class ListItem : MonoBehaviour
 {
-    public const float offsetY = -40f;
+    public const float offsetY = -55f;
 
     Text t { get { return transform.Find("ListItemText").GetComponent<Text>(); } }
     GameObject checkUI { get { return transform.Find("Checked").gameObject; } }
