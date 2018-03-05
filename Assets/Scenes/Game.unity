@@ -1144,8 +1144,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 164766401}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.027, y: 19.984, z: 0}
-  m_LocalScale: {x: 1.0502414, y: 0.91378754, z: 1}
+  m_LocalPosition: {x: 0.001, y: 19.972, z: 0}
+  m_LocalScale: {x: 0.69375145, y: 0.5208528, z: 1}
   m_Children:
   - {fileID: 2087834017}
   - {fileID: 1190869999}
@@ -1189,7 +1189,7 @@ SpriteRenderer:
   m_SortingLayerID: -127892659
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f0692590fe794e84080612d28c83b52c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: de86c2d74f5d5184ab73863a6d3dd156, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1320,11 +1320,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4887490568952162, guid: d4fb0b27dc151b24f8dc8cf4a2219e24, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -1.9782556
+      value: -9.882402
       objectReference: {fileID: 0}
     - target: {fileID: 4887490568952162, guid: d4fb0b27dc151b24f8dc8cf4a2219e24, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -1.4600002
+      value: -5.698161
       objectReference: {fileID: 0}
     - target: {fileID: 4887490568952162, guid: d4fb0b27dc151b24f8dc8cf4a2219e24, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1352,11 +1352,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4887490568952162, guid: d4fb0b27dc151b24f8dc8cf4a2219e24, type: 2}
       propertyPath: m_LocalScale.x
-      value: 0.5649718
+      value: 2.928542
       objectReference: {fileID: 0}
     - target: {fileID: 4887490568952162, guid: d4fb0b27dc151b24f8dc8cf4a2219e24, type: 2}
       propertyPath: m_LocalScale.y
-      value: 0.7412434
+      value: 2.8754444
       objectReference: {fileID: 0}
     - target: {fileID: 1973250706686052, guid: d4fb0b27dc151b24f8dc8cf4a2219e24, type: 2}
       propertyPath: m_Name
@@ -2576,11 +2576,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4887490568952162, guid: d4fb0b27dc151b24f8dc8cf4a2219e24, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0.068768546
+      value: 0.72838736
       objectReference: {fileID: 0}
     - target: {fileID: 4887490568952162, guid: d4fb0b27dc151b24f8dc8cf4a2219e24, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -1.4600002
+      value: -5.698161
       objectReference: {fileID: 0}
     - target: {fileID: 4887490568952162, guid: d4fb0b27dc151b24f8dc8cf4a2219e24, type: 2}
       propertyPath: m_LocalPosition.z
@@ -2608,11 +2608,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4887490568952162, guid: d4fb0b27dc151b24f8dc8cf4a2219e24, type: 2}
       propertyPath: m_LocalScale.x
-      value: 0.5649718
+      value: 2.928542
       objectReference: {fileID: 0}
     - target: {fileID: 4887490568952162, guid: d4fb0b27dc151b24f8dc8cf4a2219e24, type: 2}
       propertyPath: m_LocalScale.y
-      value: 0.7412434
+      value: 2.8754444
       objectReference: {fileID: 0}
     - target: {fileID: 1973250706686052, guid: d4fb0b27dc151b24f8dc8cf4a2219e24, type: 2}
       propertyPath: m_Name
@@ -2666,11 +2666,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4887490568952162, guid: d4fb0b27dc151b24f8dc8cf4a2219e24, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 1.13
+      value: 6.229298
       objectReference: {fileID: 0}
     - target: {fileID: 4887490568952162, guid: d4fb0b27dc151b24f8dc8cf4a2219e24, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -1.4600002
+      value: -5.698161
       objectReference: {fileID: 0}
     - target: {fileID: 4887490568952162, guid: d4fb0b27dc151b24f8dc8cf4a2219e24, type: 2}
       propertyPath: m_LocalPosition.z
@@ -2698,11 +2698,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4887490568952162, guid: d4fb0b27dc151b24f8dc8cf4a2219e24, type: 2}
       propertyPath: m_LocalScale.x
-      value: 0.5649718
+      value: 2.928542
       objectReference: {fileID: 0}
     - target: {fileID: 4887490568952162, guid: d4fb0b27dc151b24f8dc8cf4a2219e24, type: 2}
       propertyPath: m_LocalScale.y
-      value: 0.7412434
+      value: 2.8754444
       objectReference: {fileID: 0}
     - target: {fileID: 1973250706686052, guid: d4fb0b27dc151b24f8dc8cf4a2219e24, type: 2}
       propertyPath: m_Name
@@ -5019,7 +5019,7 @@ MonoBehaviour:
 
     Starbucks
 
-    Long John Silvers'
+    Kopitiam'
 --- !u!222 &725894934
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5158,7 +5158,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shoppingBagPrefab: {fileID: 1789171067286606, guid: 5052829c7a49e64499df706e9531c428,
     type: 2}
-  weightMultiplier: 0.1
+  weightMultiplier: 0.3
 --- !u!1001 &771284594
 Prefab:
   m_ObjectHideFlags: 0
@@ -5657,11 +5657,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4887490568952162, guid: d4fb0b27dc151b24f8dc8cf4a2219e24, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -0.92404747
+      value: -4.4178925
       objectReference: {fileID: 0}
     - target: {fileID: 4887490568952162, guid: d4fb0b27dc151b24f8dc8cf4a2219e24, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -1.4600002
+      value: -5.698161
       objectReference: {fileID: 0}
     - target: {fileID: 4887490568952162, guid: d4fb0b27dc151b24f8dc8cf4a2219e24, type: 2}
       propertyPath: m_LocalPosition.z
@@ -5689,11 +5689,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4887490568952162, guid: d4fb0b27dc151b24f8dc8cf4a2219e24, type: 2}
       propertyPath: m_LocalScale.x
-      value: 0.5649718
+      value: 2.928542
       objectReference: {fileID: 0}
     - target: {fileID: 4887490568952162, guid: d4fb0b27dc151b24f8dc8cf4a2219e24, type: 2}
       propertyPath: m_LocalScale.y
-      value: 0.7412434
+      value: 2.8754444
       objectReference: {fileID: 0}
     - target: {fileID: 1973250706686052, guid: d4fb0b27dc151b24f8dc8cf4a2219e24, type: 2}
       propertyPath: m_Name
@@ -6557,7 +6557,7 @@ MonoBehaviour:
     m_LineSpacing: 1.58
   m_Text: 'UNIQLO
 
-    Laneige
+    Dressabelle
 
     Charles & Keith'
 --- !u!222 &916728902
@@ -6973,7 +6973,7 @@ MonoBehaviour:
 
     Starbucks
 
-    Long John Silvers'
+    Kopitiam'
 --- !u!222 &945938264
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8768,11 +8768,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4887490568952162, guid: d4fb0b27dc151b24f8dc8cf4a2219e24, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -3.448858
+      value: -5.1836042
       objectReference: {fileID: 0}
     - target: {fileID: 4887490568952162, guid: d4fb0b27dc151b24f8dc8cf4a2219e24, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -2.1330724
+      value: -3.7192383
       objectReference: {fileID: 0}
     - target: {fileID: 4887490568952162, guid: d4fb0b27dc151b24f8dc8cf4a2219e24, type: 2}
       propertyPath: m_LocalPosition.z
@@ -8800,11 +8800,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4887490568952162, guid: d4fb0b27dc151b24f8dc8cf4a2219e24, type: 2}
       propertyPath: m_LocalScale.x
-      value: 0.9521621
+      value: 1.4414383
       objectReference: {fileID: 0}
     - target: {fileID: 4887490568952162, guid: d4fb0b27dc151b24f8dc8cf4a2219e24, type: 2}
       propertyPath: m_LocalScale.y
-      value: 1.0943463
+      value: 1.9199282
       objectReference: {fileID: 0}
     - target: {fileID: 1973250706686052, guid: d4fb0b27dc151b24f8dc8cf4a2219e24, type: 2}
       propertyPath: m_Name
@@ -8982,11 +8982,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4887490568952162, guid: d4fb0b27dc151b24f8dc8cf4a2219e24, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 1.7895687
+      value: 2.7466302
       objectReference: {fileID: 0}
     - target: {fileID: 4887490568952162, guid: d4fb0b27dc151b24f8dc8cf4a2219e24, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -2.1330724
+      value: -3.7192383
       objectReference: {fileID: 0}
     - target: {fileID: 4887490568952162, guid: d4fb0b27dc151b24f8dc8cf4a2219e24, type: 2}
       propertyPath: m_LocalPosition.z
@@ -9014,11 +9014,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4887490568952162, guid: d4fb0b27dc151b24f8dc8cf4a2219e24, type: 2}
       propertyPath: m_LocalScale.x
-      value: 0.9521621
+      value: 1.4414383
       objectReference: {fileID: 0}
     - target: {fileID: 4887490568952162, guid: d4fb0b27dc151b24f8dc8cf4a2219e24, type: 2}
       propertyPath: m_LocalScale.y
-      value: 1.0943463
+      value: 1.9199282
       objectReference: {fileID: 0}
     - target: {fileID: 1973250706686052, guid: d4fb0b27dc151b24f8dc8cf4a2219e24, type: 2}
       propertyPath: m_Name
@@ -9503,11 +9503,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4887490568952162, guid: d4fb0b27dc151b24f8dc8cf4a2219e24, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 3.4509497
+      value: 5.2617254
       objectReference: {fileID: 0}
     - target: {fileID: 4887490568952162, guid: d4fb0b27dc151b24f8dc8cf4a2219e24, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -2.1330724
+      value: -3.7192383
       objectReference: {fileID: 0}
     - target: {fileID: 4887490568952162, guid: d4fb0b27dc151b24f8dc8cf4a2219e24, type: 2}
       propertyPath: m_LocalPosition.z
@@ -9535,11 +9535,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4887490568952162, guid: d4fb0b27dc151b24f8dc8cf4a2219e24, type: 2}
       propertyPath: m_LocalScale.x
-      value: 0.9521621
+      value: 1.4414383
       objectReference: {fileID: 0}
     - target: {fileID: 4887490568952162, guid: d4fb0b27dc151b24f8dc8cf4a2219e24, type: 2}
       propertyPath: m_LocalScale.y
-      value: 1.0943463
+      value: 1.9199282
       objectReference: {fileID: 0}
     - target: {fileID: 1973250706686052, guid: d4fb0b27dc151b24f8dc8cf4a2219e24, type: 2}
       propertyPath: m_Name
@@ -10024,7 +10024,7 @@ MonoBehaviour:
   floorHeight: 10
   staminaBaseDecrease: 0.01
   staminaModifier: 0.1
-  staminaRegen: 0.2
+  staminaRegen: 0.4
   staminaDrainDuration: 0.02
   haltDuration: 2
   haltSprite: {fileID: 21300004, guid: d0830e63ec2330f489eac64b2fba8a60, type: 3}
@@ -10453,11 +10453,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4887490568952162, guid: d4fb0b27dc151b24f8dc8cf4a2219e24, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 2.1157918
+      value: 11.339168
       objectReference: {fileID: 0}
     - target: {fileID: 4887490568952162, guid: d4fb0b27dc151b24f8dc8cf4a2219e24, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -1.46
+      value: -5.698161
       objectReference: {fileID: 0}
     - target: {fileID: 4887490568952162, guid: d4fb0b27dc151b24f8dc8cf4a2219e24, type: 2}
       propertyPath: m_LocalPosition.z
@@ -10485,11 +10485,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4887490568952162, guid: d4fb0b27dc151b24f8dc8cf4a2219e24, type: 2}
       propertyPath: m_LocalScale.x
-      value: 0.5649718
+      value: 2.928542
       objectReference: {fileID: 0}
     - target: {fileID: 4887490568952162, guid: d4fb0b27dc151b24f8dc8cf4a2219e24, type: 2}
       propertyPath: m_LocalScale.y
-      value: 0.7412434
+      value: 2.8754444
       objectReference: {fileID: 0}
     - target: {fileID: 1973250706686052, guid: d4fb0b27dc151b24f8dc8cf4a2219e24, type: 2}
       propertyPath: m_Name
@@ -10902,7 +10902,7 @@ MonoBehaviour:
     m_LineSpacing: 1.58
   m_Text: 'UNIQLO
 
-    Laneige
+    Dressabelle
 
     Charles & Keith'
 --- !u!222 &1394337259
@@ -15158,11 +15158,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4887490568952162, guid: d4fb0b27dc151b24f8dc8cf4a2219e24, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -1.6721724
+      value: -2.4939551
       objectReference: {fileID: 0}
     - target: {fileID: 4887490568952162, guid: d4fb0b27dc151b24f8dc8cf4a2219e24, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -2.1330724
+      value: -3.7192383
       objectReference: {fileID: 0}
     - target: {fileID: 4887490568952162, guid: d4fb0b27dc151b24f8dc8cf4a2219e24, type: 2}
       propertyPath: m_LocalPosition.z
@@ -15190,11 +15190,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4887490568952162, guid: d4fb0b27dc151b24f8dc8cf4a2219e24, type: 2}
       propertyPath: m_LocalScale.x
-      value: 0.9521621
+      value: 1.4414383
       objectReference: {fileID: 0}
     - target: {fileID: 4887490568952162, guid: d4fb0b27dc151b24f8dc8cf4a2219e24, type: 2}
       propertyPath: m_LocalScale.y
-      value: 1.0943463
+      value: 1.9199282
       objectReference: {fileID: 0}
     - target: {fileID: 1973250706686052, guid: d4fb0b27dc151b24f8dc8cf4a2219e24, type: 2}
       propertyPath: m_Name
@@ -15758,11 +15758,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4887490568952162, guid: d4fb0b27dc151b24f8dc8cf4a2219e24, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0.0010464827
+      value: 0.039061625
       objectReference: {fileID: 0}
     - target: {fileID: 4887490568952162, guid: d4fb0b27dc151b24f8dc8cf4a2219e24, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -2.1330724
+      value: -3.7192383
       objectReference: {fileID: 0}
     - target: {fileID: 4887490568952162, guid: d4fb0b27dc151b24f8dc8cf4a2219e24, type: 2}
       propertyPath: m_LocalPosition.z
@@ -15790,11 +15790,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4887490568952162, guid: d4fb0b27dc151b24f8dc8cf4a2219e24, type: 2}
       propertyPath: m_LocalScale.x
-      value: 0.9521621
+      value: 1.4414383
       objectReference: {fileID: 0}
     - target: {fileID: 4887490568952162, guid: d4fb0b27dc151b24f8dc8cf4a2219e24, type: 2}
       propertyPath: m_LocalScale.y
-      value: 1.0943463
+      value: 1.9199282
       objectReference: {fileID: 0}
     - target: {fileID: 1973250706686052, guid: d4fb0b27dc151b24f8dc8cf4a2219e24, type: 2}
       propertyPath: m_Name
@@ -16020,8 +16020,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2103897207}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.96, y: 29.985, z: 0}
-  m_LocalScale: {x: 1.77, y: 1.3490845, z: 1}
+  m_LocalPosition: {x: 10.833, y: 29.997, z: 0}
+  m_LocalScale: {x: 0.34146687, y: 0.34777233, z: 1}
   m_Children:
   - {fileID: 333969892}
   - {fileID: 201605520}
@@ -16065,12 +16065,12 @@ SpriteRenderer:
   m_SortingLayerID: -127892659
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c8f1521a2ef5e584d95df36c6cc5a579, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 66a34fc9559317846b7d33ab12f156bd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 6.15, y: 4.61}
+  m_Size: {x: 5.4, y: 5.4}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
