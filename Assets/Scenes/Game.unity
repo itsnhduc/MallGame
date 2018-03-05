@@ -9264,7 +9264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e495aa5323a1d5428103e32c832e2d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startSpawnDuration: 2
+  startSpawnDuration: 10
   minSpawnDuration: 2
   spawnDurationDecay: 0.25
   urgentThreshold: 15

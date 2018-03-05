@@ -34,11 +34,14 @@ public class ItemList : Singleton<ItemList>
     public void Remove(string productName)
     {
         ListItem li = Products.Find(obj => obj.Text == productName);
-        for (int i = li.Index + 1; i < Products.Count; i++)
+        if (Products != null)
         {
-            Products[i].Index -= 1;
+            for (int i = li.Index + 1; i < Products.Count; i++)
+            {
+                Products[i].Index -= 1;
+            }
+            Destroy(li.gameObject);
+            ItemCount.Instance.Count -= 1;
         }
-        Destroy(li.gameObject);
-        ItemCount.Instance.Count -= 1;
     }
 }
