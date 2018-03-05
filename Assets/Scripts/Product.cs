@@ -65,11 +65,14 @@ public class Product : Interactable
     {
         Spawned = false;
         GuyMovement.Instance.IsEnabled = false;
+        PhoneBehaviors.Instance.IsEnabled = false;
         yield return new WaitForSeconds(buyDuration);
         GuyMovement.Instance.IsEnabled = true;
+        PhoneBehaviors.Instance.IsEnabled = true;
         GuyCarry.Instance.Add(this);
         DialogService.Instance.Show("Bought " + productName, DialogService.ShortDuration);
-        ItemList.Instance.Refresh();
+        // ItemList.Instance.Refresh();
+        ItemList.Instance.Check(productName);
     }
 
     IEnumerator Animate()

@@ -7,70 +7,38 @@ using UnityEngine;
 public class ItemList : Singleton<ItemList>
 {
     public GameObject listItemPrefab;
-    public float speed;
-    public int minScrollNumber;
 
-    Rigidbody2D rb { get { return GetComponent<Rigidbody2D>(); } }
-
-    public Vector2 MoveDirection { set { rb.velocity = value * speed; } }
-
-    private Vector2 _originalLocalPos;
-
-    private bool _isScrollable = false;
-
-    void Start()
+    public List<ListItem> Products
     {
-        _originalLocalPos = transform.localPosition;
+        get { return GetComponentsInChildren<ListItem>().ToList(); }
     }
 
-    void Update()
+    public void Add(string productName, Sprite productIcon)
     {
-        if (_isScrollable)
+        GameObject newItemList = Instantiate(listItemPrefab, transform);
+        newItemList.name = productName;
+        ListItem li = newItemList.GetComponent<ListItem>();
+        li.Index = Products.Count - 1;
+        li.Text = productName;
+        li.IsChecked = false;
+        li.Icon = productIcon;
+        ItemCount.Instance.Count += 1;
+    }
+
+    public void Check(string productName)
+    {
+        ListItem li = Products.Find(obj => obj.Text == productName);
+        li.IsChecked = true;
+    }
+
+    public void Remove(string productName)
+    {
+        ListItem li = Products.Find(obj => obj.Text == productName);
+        for (int i = li.Index + 1; i < Products.Count; i++)
         {
-            bool upKey = Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W);
-            bool downKey = Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S);
-            if (upKey || downKey) MoveDirection = upKey ? Vector2.up : Vector2.down;
-            else MoveDirection = Vector2.zero;
-            if (transform.localPosition.y < _originalLocalPos.y)
-            {
-                MoveDirection = Vector2.zero;
-                transform.localPosition = _originalLocalPos;
-            }
+            Products[i].Index -= 1;
         }
-    }
-
-    public void Refresh()
-    {
-        _Clear();
-        _Render();
-    }
-
-    private void _Clear()
-    {
-        foreach (Transform child in transform)
-        {
-            if (child.tag == "ListItem") Destroy(child.gameObject);
-        }
-    }
-    private void _Render()
-    {
-        // transform.localPosition = _originalLocalPos;
-        var guyItems = GuyMovement.Instance.GetComponent<ItemStorage>().items;
-        var remainingItems = Spawner.Instance.products.Where(p => p.Spawned);
-        var guyItemInfo = guyItems.Select(p => new KeyValuePair<Product, bool>(p, true));
-        var remainingItemsInfo = remainingItems.Select(p => new KeyValuePair<Product, bool>(p, false));
-        var totalItemInfo = guyItemInfo.Concat(remainingItemsInfo);
-        for (int i = 0; i < totalItemInfo.Count(); i++)
-        {
-            GameObject newItemList = Instantiate(listItemPrefab, transform);
-            var targetProduct = totalItemInfo.ElementAt(i);
-            ListItem li = newItemList.GetComponent<ListItem>();
-            li.Index = i;
-            li.Text = targetProduct.Key.productName;
-            li.IsChecked = targetProduct.Value;
-            li.Icon = targetProduct.Key.icon;
-        }
-        ItemCount.Instance.Count = totalItemInfo.Count();
-        _isScrollable = totalItemInfo.Count() >= minScrollNumber;
+        Destroy(li.gameObject);
+        ItemCount.Instance.Count -= 1;
     }
 }

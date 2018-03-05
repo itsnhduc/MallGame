@@ -15,8 +15,9 @@ public class CarBehavior : Interactable
 		{
 			DialogService.Instance.Show(guyCarry.Items.Count + " item(s) dropped", DialogService.ShortDuration);
 			carStorage.items.AddRange(guyCarry.Items);
+			guyCarry.Items.ForEach(p => ItemList.Instance.Remove(p.productName));
 			guyCarry.Clear();
-			ItemList.Instance.Refresh();
+			// ItemList.Instance.Refresh();
 			GalBehaviors.Instance.BecomeHappy();
 		}
 		TotalWeightDisplay.Instance.Value = carStorage.items.Select(p => p.weight).Sum();

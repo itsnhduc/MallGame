@@ -30,16 +30,18 @@ public class Spawner : Singleton<Spawner>
             var remainingItems = products.Where(p => !p.Spawned);
             if (remainingItems.Count() > 0)
             {
-                PickNextItem(remainingItems).Spawned = true;
+                Product nextItem = PickNextItem(remainingItems);
+                nextItem.Spawned = true;
+                // ItemList.Instance.Refresh();
+                ItemList.Instance.Add(nextItem.productName, nextItem.icon);
+                NewItemMark.Instance.IsShown = true;
+                int spawnedCount = products.Where(p => p.Spawned).Count();
+                NewItemMark.Instance.IsUrgent = spawnedCount > urgentThreshold;
+                if (spawnedCount > deadThreshold)
+                {
+                    GameMaster.Instance.State = GameMaster.GameState.AfterGame;
+                }
             }
-            ItemList.Instance.Refresh();
-            NewItemMark.Instance.IsShown = true;
-            int spawnedCount = products.Where(p => p.Spawned).Count();
-            NewItemMark.Instance.IsUrgent = spawnedCount > urgentThreshold;
-            if (spawnedCount > deadThreshold)
-            {
-                GameMaster.Instance.State = GameMaster.GameState.AfterGame;
-            } 
             yield return new WaitForSeconds(_spawnDuration);
             if (_spawnDuration > minSpawnDuration)
             {

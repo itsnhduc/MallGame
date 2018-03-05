@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class ListItem : MonoBehaviour
 {
-    public const float offsetY = -0.4f;
+    public const float offsetY = -40f;
 
     Text t { get { return transform.Find("ListItemText").GetComponent<Text>(); } }
     GameObject checkUI { get { return transform.Find("Checked").gameObject; } }
@@ -27,11 +27,14 @@ public class ListItem : MonoBehaviour
 
     public Sprite Icon { set { icon.sprite = value; } }
 
+    private int _index;
     public int Index
     {
+        get { return _index; }
         set
         {
-            transform.position += new Vector3(0, value * offsetY, 0);
+            transform.localPosition = new Vector2(0, value * offsetY);
+            _index = value;
         }
     }
 }
