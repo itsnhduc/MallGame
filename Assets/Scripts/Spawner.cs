@@ -32,7 +32,6 @@ public class Spawner : Singleton<Spawner>
             {
                 Product nextItem = PickNextItem(remainingItems);
                 nextItem.Spawned = true;
-                // ItemList.Instance.Refresh();
                 ItemList.Instance.Add(nextItem.productName, nextItem.icon);
                 NewItemMark.Instance.IsShown = true;
                 int spawnedCount = products.Where(p => p.Spawned).Count();
