@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Networking;
+using UnityEngine.SceneManagement;
 
 public class Scoreboard : MonoBehaviour {
 
@@ -13,6 +14,7 @@ public class Scoreboard : MonoBehaviour {
   public Button prevBtn;
   public Button nextBtn;
   public Text pageNumber;
+  public Button mainMenuBtn;
 
   private List<GameObject> playerScoreboardItems = new List<GameObject>();
   private List<Record> records;
@@ -29,7 +31,13 @@ public class Scoreboard : MonoBehaviour {
     StartCoroutine(GetScores());
     prevBtn.onClick.AddListener(PrevPage);
     nextBtn.onClick.AddListener(NextPage);
+    mainMenuBtn.onClick.AddListener(OnMainMenu);
 
+  }
+
+  private void OnMainMenu() {
+    Debug.Log("Back to Main Menu");
+    SceneManager.LoadScene("MainMenu");
   }
 
   IEnumerator GetScores() {
