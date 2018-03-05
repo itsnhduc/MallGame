@@ -10155,10 +10155,9 @@ MonoBehaviour:
   staminaModifier: 0.1
   staminaRegen: 0.4
   staminaDrainDuration: 0.02
-  haltDuration: 2
+  haltDuration: 2.5
   tiredSprite: {fileID: 21300008, guid: d0830e63ec2330f489eac64b2fba8a60, type: 3}
   haltSprite: {fileID: 21300004, guid: d0830e63ec2330f489eac64b2fba8a60, type: 3}
-  haltSound: {fileID: 8300000, guid: 1094c8365e698df448f3628aef38ae3c, type: 3}
 --- !u!50 &1306325149
 Rigidbody2D:
   serializedVersion: 4
@@ -13053,6 +13052,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   modifier: 0.2
+  scratchSound: {fileID: 8300000, guid: a8ec06eae1481854db65c4a1f1086bf7, type: 3}
+  fadeInAmount: 0.016
 --- !u!1001 &1702705519
 Prefab:
   m_ObjectHideFlags: 0

@@ -15,7 +15,6 @@ public class GuyMovement : Singleton<GuyMovement>
     public float haltDuration;
     public Sprite tiredSprite;
     public Sprite haltSprite;
-    public AudioClip haltSound;
 
     public float SpeedOffset { get; set; }
     public bool IsInControl { get; set; }
@@ -62,6 +61,7 @@ public class GuyMovement : Singleton<GuyMovement>
         {
             IsInControl = !value;
             sr.sprite = value ? haltSprite : _originalSprite;
+            BackgroundMusic.Instance.IsPaused = IsHalted;
         }
     }
 
@@ -76,6 +76,7 @@ public class GuyMovement : Singleton<GuyMovement>
 
     public bool IsTired
     {
+        get { return sr.sprite == tiredSprite; }
         set
         {
             if (!IsHalted) sr.sprite = value ? tiredSprite : _originalSprite;
@@ -108,7 +109,7 @@ public class GuyMovement : Singleton<GuyMovement>
             MoveDirection = Vector2.zero;
         }
 
-        BackgroundMusic.Instance.Pitch = TrueSpeed / speed;
+        if (IsTired) BackgroundMusic.Instance.Pitch = TrueSpeed / speed;
     }
 
     IEnumerator DrainStamina()
@@ -131,7 +132,6 @@ public class GuyMovement : Singleton<GuyMovement>
     IEnumerator Halt()
     {
         IsHalted = true;
-        SoundSource.Instance.Src.PlayOneShot(haltSound);
         yield return new WaitForSeconds(haltDuration);
         IsHalted = false;
     }
