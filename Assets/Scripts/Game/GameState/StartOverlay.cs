@@ -6,8 +6,23 @@ using UnityEngine;
 
 public class StartOverlay : MonoBehaviour
 {
-	void Update()
-	{
-		if (Input.anyKey) GameMaster.Instance.State = GameMaster.GameState.InGame;
-	}
+    public CountdownNumber num;
+    public AudioClip countdownSound;
+
+    void Start()
+    {
+        StartCoroutine(CountDown());
+    }
+
+    IEnumerator CountDown()
+    {
+        SoundSource.Instance.Src.PlayOneShot(countdownSound);
+        for (int i = 3; i >= -1; i--)
+        {
+            if (i == -1) GameMaster.Instance.State = GameMaster.GameState.InGame;
+            else num.Text = i != 0 ? i.ToString() : "Start!";
+            yield return new WaitForSeconds(1);
+        }
+
+    }
 }

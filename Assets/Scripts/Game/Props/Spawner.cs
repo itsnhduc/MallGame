@@ -6,11 +6,13 @@ using UnityEngine;
 
 public class Spawner : Singleton<Spawner>
 {
+    public float startingSpawnDelay;
     public float startSpawnDuration;
     public float minSpawnDuration;
     public float spawnDurationDecay;
     public float urgentThreshold;
     public float deadThreshold;
+    public AudioClip newItemSound;
 
     public List<Product> products { get; private set; }
 
@@ -25,6 +27,7 @@ public class Spawner : Singleton<Spawner>
 
     IEnumerator StartSpawning()
     {
+        yield return new WaitForSeconds(startingSpawnDelay);
         while (true)
         {
             var remainingItems = products.Where(p => !p.Spawned);
@@ -40,6 +43,7 @@ public class Spawner : Singleton<Spawner>
                 {
                     GameMaster.Instance.State = GameMaster.GameState.AfterGame;
                 }
+                SoundSource.Instance.Src.PlayOneShot(newItemSound);
             }
             yield return new WaitForSeconds(_spawnDuration);
             if (_spawnDuration > minSpawnDuration)

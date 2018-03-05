@@ -14,6 +14,7 @@ public class GuyMovement : Singleton<GuyMovement>
     public float staminaDrainDuration;
     public float haltDuration;
     public Sprite haltSprite;
+    public AudioClip haltSound;
 
     public float SpeedOffset { get; set; }
     public bool IsInControl { get; set; }
@@ -118,6 +119,7 @@ public class GuyMovement : Singleton<GuyMovement>
     IEnumerator Halt()
     {
         IsHalted = true;
+        SoundSource.Instance.Src.PlayOneShot(haltSound);
         yield return new WaitForSeconds(haltDuration);
         IsHalted = false;
     }

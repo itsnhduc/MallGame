@@ -10,6 +10,7 @@ public class Product : Interactable
     public string productName;
     public int weight;
     public Sprite icon;
+    public AudioClip buyingDoneSound;
 
     public const float buyDuration = 1.5f;
     public const float moveY = 0.5f;
@@ -68,6 +69,7 @@ public class Product : Interactable
         PhoneBehaviors.Instance.IsEnabled = false;
         DialogService.Instance.Show("Buying... ");
         yield return new WaitForSeconds(buyDuration);
+        SoundSource.Instance.Src.PlayOneShot(buyingDoneSound);
         GuyMovement.Instance.IsEnabled = true;
         PhoneBehaviors.Instance.IsEnabled = true;
         GuyCarry.Instance.Add(this);

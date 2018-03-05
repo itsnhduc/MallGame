@@ -399,6 +399,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dea2ea9ad04a6bb438e2432347c1d3a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  elevatorDingSound: {fileID: 8300000, guid: 08ffda9c339cf0445907308e016f3214, type: 3}
 --- !u!1 &59516925
 GameObject:
   m_ObjectHideFlags: 0
@@ -6093,6 +6094,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 697128440}
+  - {fileID: 1860851796}
   m_Father: {fileID: 1776025495}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6169,6 +6171,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8377fee8e7d772f4aa8bf95e36078ad8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  num: {fileID: 1860851799}
+  countdownSound: {fileID: 8300000, guid: a9a0ee337cc063d46a1e7634ab94dd44, type: 3}
 --- !u!1001 &854614608
 Prefab:
   m_ObjectHideFlags: 0
@@ -8374,8 +8378,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1121325334}
   - component: {fileID: 1121325335}
+  - component: {fileID: 1121325336}
   m_Layer: 0
-  m_Name: OneOffSoundSource
+  m_Name: SoundSource
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8405,9 +8410,9 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.2
+  m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -8474,6 +8479,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &1121325336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1121325333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a831cc707f9991d409b14931d1b96ec0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1133898175
 GameObject:
   m_ObjectHideFlags: 0
@@ -9373,11 +9389,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e495aa5323a1d5428103e32c832e2d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startingSpawnDelay: 5.5
   startSpawnDuration: 10
   minSpawnDuration: 2
   spawnDurationDecay: 0.25
   urgentThreshold: 15
   deadThreshold: 24
+  newItemSound: {fileID: 8300000, guid: ac973924c9dd39d43aa7bef95c57e79d, type: 3}
 --- !u!1 &1249761040
 GameObject:
   m_ObjectHideFlags: 0
@@ -9950,6 +9968,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d578da404710ff34f81ce970075aec4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameOverSound: {fileID: 8300000, guid: 645de546ed57a6a418aad16ebd6a9979, type: 3}
 --- !u!1001 &1285358016
 Prefab:
   m_ObjectHideFlags: 0
@@ -10137,6 +10156,7 @@ MonoBehaviour:
   staminaDrainDuration: 0.02
   haltDuration: 2
   haltSprite: {fileID: 21300004, guid: d0830e63ec2330f489eac64b2fba8a60, type: 3}
+  haltSound: {fileID: 8300000, guid: 1094c8365e698df448f3628aef38ae3c, type: 3}
 --- !u!50 &1306325149
 Rigidbody2D:
   serializedVersion: 4
@@ -12936,7 +12956,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ee2f36d9d0febdd488ddfa4efa079ec0, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.2
+  m_Volume: 1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -14031,6 +14051,92 @@ Transform:
   m_PrefabParentObject: {fileID: 4887490568952162, guid: d4fb0b27dc151b24f8dc8cf4a2219e24,
     type: 2}
   m_PrefabInternal: {fileID: 1840359754}
+--- !u!1 &1860851795
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1860851796}
+  - component: {fileID: 1860851798}
+  - component: {fileID: 1860851797}
+  - component: {fileID: 1860851799}
+  m_Layer: 5
+  m_Name: CoundownNum
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1860851796
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1860851795}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 850338872}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -0.0098266825, y: -84.0195}
+  m_SizeDelta: {x: 1600, y: 506.7}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1860851797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1860851795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: bc349ce8889e7bc4ba2726ed8ea7154e, type: 3}
+    m_FontSize: 221
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 221
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 3
+--- !u!222 &1860851798
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1860851795}
+--- !u!114 &1860851799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1860851795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 579034245466b0843821c8f1a719724a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1862404591
 GameObject:
   m_ObjectHideFlags: 0
@@ -14898,10 +15004,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1975834498}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdf3988ffc418454087c4b63efe1fed9, type: 3}
+  m_Script: {fileID: 11500000, guid: a609ec3e90f0ef8409009bd0a55e5b6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
+  doneSound: {fileID: 8300000, guid: 4c0c474bc890834439e40de12c4f2c8b, type: 3}
 --- !u!61 &1975834503
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class ElevatorPanelBehaviors : MonoBehaviour
 {
+    public AudioClip elevatorDingSound;
+
     SpriteRenderer sp { get { return GetComponent<SpriteRenderer>(); } }
 
     public bool IsActive
@@ -54,6 +56,7 @@ public class ElevatorPanelBehaviors : MonoBehaviour
             bool useKey = Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Return);
             if (useKey)
             {
+                SoundSource.Instance.Src.PlayOneShot(elevatorDingSound);
                 GuyMovement.Instance.Floor = ActiveFloor;
                 ActiveFloor = -1;
                 GuyMovement.Instance.IsInControl = true;

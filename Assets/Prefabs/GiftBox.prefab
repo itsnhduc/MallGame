@@ -82,6 +82,7 @@ MonoBehaviour:
   productName: Generic Product
   weight: 0
   icon: {fileID: 21300000, guid: 0f8d1c81bc4ef8a49af950efa2bf4820, type: 3}
+  buyingDoneSound: {fileID: 8300000, guid: 65473c2a3ec796e40a59de9b63598e11, type: 3}
 --- !u!212 &212528361224816970
 SpriteRenderer:
   m_ObjectHideFlags: 1

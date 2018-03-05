@@ -17,9 +17,10 @@ public class GameMaster : Singleton<GameMaster>
         get { return _state; }
         set
         {
-            Time.timeScale = (State == GameState.InGame ? 1 : 0);
-            StartOverlay.SetActive(State == GameState.BeforeGame);
-            EndOverlay.SetActive(State == GameState.AfterGame);
+		    GuyMovement.Instance.IsInControl = value == GameState.InGame;
+            PhoneBehaviors.Instance.IsEnabled = value == GameState.InGame;
+            StartOverlay.SetActive(value == GameState.BeforeGame);
+            EndOverlay.SetActive(value == GameState.AfterGame);
             _state = value;
         }
     }

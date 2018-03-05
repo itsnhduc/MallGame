@@ -7,9 +7,15 @@ using UnityEngine.SceneManagement;
 
 public class EndOverlay : MonoBehaviour
 {
+	public AudioClip gameOverSound;
+
+	void Start()
+	{
+		Time.timeScale = 0;
+	}
+
 	void Update()
 	{
-		// dev
-		// if (Input.anyKey) SceneManager.LoadScene("Game");
+		SoundSource.Instance.Src.PlayOneShot(gameOverSound);
 	}
 }
