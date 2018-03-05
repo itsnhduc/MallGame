@@ -27,7 +27,7 @@ public class CarBehavior : Interactable
         var guyCarry = FindObjectOfType<GuyCarry>();
 		if (guyCarry.Items.Count > 0)
 		{
-			DialogService.Instance.Show("[E] Drop " + guyCarry.Items.Count + " items");
+			DialogService.Instance.Show("[E/Enter] Drop " + guyCarry.Items.Count + " items");
 		}
 	}
     public override void Exit()

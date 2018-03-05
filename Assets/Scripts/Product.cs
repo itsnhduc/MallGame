@@ -54,7 +54,7 @@ public class Product : Interactable
 
     public override void Hover()
     {
-        DialogService.Instance.Show(productName + Environment.NewLine + "[E] Buy Item");
+        DialogService.Instance.Show(productName + Environment.NewLine + "[E/Enter] Buy Item");
     }
     public override void Exit()
     {

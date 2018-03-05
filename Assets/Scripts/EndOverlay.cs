@@ -10,6 +10,6 @@ public class EndOverlay : MonoBehaviour
 	void Update()
 	{
 		// dev
-		if (Input.anyKey) SceneManager.LoadScene("Game");
+		// if (Input.anyKey) SceneManager.LoadScene("Game");
 	}
 }

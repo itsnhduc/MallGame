@@ -26,7 +26,7 @@ public class ElevatorPanelBehaviors : MonoBehaviour
         {
             if (_activeFloor != -1) transform.GetChild(_activeFloor).gameObject.SetActive(false);
             if (value != -1) transform.GetChild(value).gameObject.SetActive(true);
-            DialogService.Instance.Show("[E] Going to " + (value > 0 ? "Floor " + value : "the Basement"));
+            DialogService.Instance.Show("[E/Enter] Going to " + (value > 0 ? "Floor " + value : "the Basement"));
             _activeFloor = value;
         }
     }
