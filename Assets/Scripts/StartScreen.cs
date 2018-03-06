@@ -8,20 +8,27 @@ public class StartScreen : MonoBehaviour {
 
   public Button startGameBtn;
   public Button leaderboardBtn;
-  public Button exitGameBtn;
 
 	// Use this for initialization
 	void Start () {
 
     startGameBtn.onClick.AddListener(OnStartGame);
     leaderboardBtn.onClick.AddListener(OnLeaderboard);
-    exitGameBtn.onClick.AddListener(OnExitGame);
+    if (Debug.isDebugBuild) {
+      Debug.Log("Initializing game in Development...");
+      PlayerPrefs.DeleteAll();
+    }
 		
 	}
 
   private void OnStartGame() {
-    Debug.Log("Starting Game...");
-    SceneManager.LoadScene("Game");
+    if (PlayerPrefs.HasKey("playerName")) {
+      string playerName = PlayerPrefs.GetString("playerName");
+      Debug.Log("Starting Game as " + playerName + "...");
+      SceneManager.LoadScene("Game");
+    } else {
+      SceneManager.LoadScene("UserInput");
+    }
   }
 
   private void OnLeaderboard() {
@@ -29,8 +36,4 @@ public class StartScreen : MonoBehaviour {
     SceneManager.LoadScene("Leaderboard");
   }
 
-  private void OnExitGame() {
-    Debug.Log("Exiting Game...");
-    Application.Quit();
-  }
 }

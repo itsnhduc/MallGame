@@ -50,7 +50,7 @@ public class Scoreboard : MonoBehaviour {
           Debug.Log(www.error);
         } else {
           if (www.isDone) {
-            Response response = JsonUtility.FromJson<Response>(www.downloadHandler.text);
+            ScoreTopResponse response = JsonUtility.FromJson<ScoreTopResponse>(www.downloadHandler.text);
             if (response.error != string.Empty) {
               Debug.Log(response.error);
             } else {
