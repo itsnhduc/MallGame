@@ -12,11 +12,12 @@ public class HightlightSelection : MonoBehaviour
     public float offsetY;
 
     private Vector3 _originalPos;
-    private int _index = 0;
+    private static int _index = 0;
 
     void Start()
     {
         _originalPos = highlight.transform.localPosition;
+		_AdvanceIndex(0);
     }
 
     void Update()
