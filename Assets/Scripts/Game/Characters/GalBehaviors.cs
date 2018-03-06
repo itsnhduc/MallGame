@@ -22,11 +22,8 @@ public class GalBehaviors : Singleton<GalBehaviors>
         get { return sr.sprite == happySprite; }
         set
         {
-            if (!IsSmiling)
-            {
-                sr.sprite = value ? happySprite : _originalSprite;
-                if (value) StartCoroutine(Shake());
-            }
+            sr.sprite = value ? happySprite : _originalSprite;
+            if (value) StartCoroutine(Shake());
         }
     }
 
@@ -35,7 +32,10 @@ public class GalBehaviors : Singleton<GalBehaviors>
         get { return sr.sprite == smileSprite; }
         set
         {
-            sr.sprite = value ? smileSprite : _originalSprite;
+            if (!IsHappy)
+            {
+                sr.sprite = value ? smileSprite : _originalSprite;
+            }
         }
     }
 

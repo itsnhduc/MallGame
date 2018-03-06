@@ -16,7 +16,7 @@ public class DropZone : Interactable
 		{
 			DialogService.Instance.Show(guyCarry.Items.Count + " item(s) dropped", DialogService.ShortDuration);
 			carStorage.items.AddRange(guyCarry.Items);
-			guyCarry.Items.ForEach(p => ItemList.Instance.Remove(p.productName));
+			ItemList.Instance.Remove(guyCarry.Items.Select(p => p.productName).ToList());
 			guyCarry.Clear();
 			GalBehaviors.Instance.BecomeHappy();
 			SoundSource.Instance.Src.PlayOneShot(doneSound);

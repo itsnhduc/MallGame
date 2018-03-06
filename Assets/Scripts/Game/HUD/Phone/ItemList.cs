@@ -31,17 +31,17 @@ public class ItemList : Singleton<ItemList>
         li.IsChecked = true;
     }
 
-    public void Remove(string productName)
+    public void Remove(List<string> productNames)
     {
-        ListItem li = Products.Find(obj => obj.Text == productName);
-        if (Products != null)
+        int backtrack = 0;
+        for (int i = 0; i < Products.Count; i++)
         {
-            for (int i = li.Index + 1; i < Products.Count; i++)
-            {
-                Products[i].Index -= 1;
-            }
-            Destroy(li.gameObject);
-            ItemCount.Instance.Count -= 1;
+            ListItem li = Products[i];
+            if (productNames.Contains(li.Text)) backtrack++;
+            else li.Index -= backtrack;
         }
+        Products
+            .Where(li => productNames.Contains(li.Text))
+            .ToList().ForEach(li => Destroy(li.gameObject));
     }
 }
