@@ -35,7 +35,7 @@ public class GameMaster : Singleton<GameMaster>
 
     void Update()
     {
-        if (State == GameState.InGame)
+        if (State == GameState.InGame && !GuyMovement.Instance.IsHalted && !Product.IsBuying) 
         {
             bool pauseKey = Input.GetKeyDown(KeyCode.Escape);
             if (pauseKey) State = GameState.PausedGame;

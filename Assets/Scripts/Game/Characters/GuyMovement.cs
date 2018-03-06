@@ -133,16 +133,20 @@ public class GuyMovement : Singleton<GuyMovement>
     {
         while (true)
         {
-            if (rb.velocity != Vector2.zero)
+            if (Time.timeScale!=0)
             {
-                float offset = staminaBaseDecrease + staminaModifier * Mathf.Abs(SpeedOffset);
-                StaminaSlider.Instance.Percentage -= offset;
-            }
-            else
-            {
-                StaminaSlider.Instance.Percentage += staminaRegen;
+                if (rb.velocity != Vector2.zero)
+                {
+                    float offset = staminaBaseDecrease + staminaModifier * Mathf.Abs(SpeedOffset);
+                    StaminaSlider.Instance.Percentage -= offset;
+                }
+                else
+                {
+                    StaminaSlider.Instance.Percentage += staminaRegen;
+                }
             }
             yield return new WaitForSeconds(staminaDrainDuration);
+           
         }
     }
 

@@ -12,12 +12,12 @@ public class EndOverlay : MonoBehaviour
 
     void OnEnable()
     {
-        Time.timeScale = 0;
-        SoundSource.Instance.Src.PlayOneShot(gameOverSound);
-		
-		string playerName = PlayerPrefs.GetString("playerName");
-		int score = TotalWeightDisplay.Instance.Value;
-		StartCoroutine(SendRequest(playerName, score));
+      Time.timeScale = 0;
+      SoundSource.Instance.Src.PlayOneShot(gameOverSound);
+      
+      string playerName = PlayerPrefs.GetString("playerName");
+      int score = TotalWeightDisplay.Instance.Value;
+      StartCoroutine(SendRequest(playerName, score));
     }
 
     void Update()

@@ -16,6 +16,30 @@ public class Product : Interactable
     public const float moveY = 0.5f;
     public const float animateAmount = 0.05f;
 
+    private static bool _isBuying = false;
+    public static bool IsBuying
+    {
+        get { return _isBuying; }
+        private set
+        {
+            if (value)
+            {
+               
+                GuyMovement.Instance.IsEnabled = false;
+                PhoneBehaviors.Instance.IsEnabled = false;
+                DialogService.Instance.Show("Buying... ");
+            }
+            else
+            {
+                
+                GuyMovement.Instance.IsEnabled = true;
+                PhoneBehaviors.Instance.IsEnabled = true;
+                
+            }
+            _isBuying = value;
+        }
+    }
+
     SpriteRenderer sp { get { return GetComponent<SpriteRenderer>(); } }
     BoxCollider2D coll { get { return GetComponent<BoxCollider2D>(); } }
 
@@ -65,13 +89,10 @@ public class Product : Interactable
     IEnumerator Buy()
     {
         Spawned = false;
-        GuyMovement.Instance.IsEnabled = false;
-        PhoneBehaviors.Instance.IsEnabled = false;
-        DialogService.Instance.Show("Buying... ");
+        IsBuying = true;
         yield return new WaitForSeconds(buyDuration);
         SoundSource.Instance.Src.PlayOneShot(buyingDoneSound);
-        GuyMovement.Instance.IsEnabled = true;
-        PhoneBehaviors.Instance.IsEnabled = true;
+        IsBuying = false;
         GuyCarry.Instance.Add(this);
         DialogService.Instance.Show("Bought " + productName, DialogService.ShortDuration);
         ItemList.Instance.Check(productName);
