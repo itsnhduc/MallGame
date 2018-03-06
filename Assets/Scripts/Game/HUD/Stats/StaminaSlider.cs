@@ -18,6 +18,8 @@ public class StaminaSlider : Singleton<StaminaSlider>
         {
             s.value = value;
             GuyMovement.Instance.IsTired = value <= tiredThreshold;
+            // print((tiredThreshold - value) / tiredThreshold);
+            StaminaOverlay.Instance.Visibility = (tiredThreshold - value) / tiredThreshold;
         }
     }
 }

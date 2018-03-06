@@ -80,6 +80,7 @@ public class GuyMovement : Singleton<GuyMovement>
         set
         {
             if (!IsHalted) sr.sprite = value ? tiredSprite : _originalSprite;
+            BackgroundMusic.Instance.Pitch = value ? TrueSpeed / speed : 1;
         }
     }
 
@@ -108,8 +109,6 @@ public class GuyMovement : Singleton<GuyMovement>
         {
             MoveDirection = Vector2.zero;
         }
-
-        if (IsTired) BackgroundMusic.Instance.Pitch = TrueSpeed / speed;
     }
 
     IEnumerator DrainStamina()
