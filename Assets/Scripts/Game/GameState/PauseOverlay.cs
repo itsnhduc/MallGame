@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class PauseOverlay : MonoBehaviour
 {
-	void Start()
+	void OnEnable()
 	{
 		Time.timeScale = 0;
 	}

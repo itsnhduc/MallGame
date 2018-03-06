@@ -9,7 +9,7 @@ public class EndOverlay : MonoBehaviour
 {
 	public AudioClip gameOverSound;
 
-	void Start()
+	void OnEnable()
 	{
 		Time.timeScale = 0;
 		SoundSource.Instance.Src.PlayOneShot(gameOverSound);
