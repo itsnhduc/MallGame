@@ -9964,8 +9964,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingSpawnDelay: 6.5
   startSpawnDuration: 20
-  minSpawnDuration: 2
-  spawnDurationDecay: 0.1
+  minSpawnDuration: 5
+  spawnDurationDecay: 1
   urgentThreshold: 10
   deadThreshold: 15
   newItemSound: {fileID: 8300000, guid: ac973924c9dd39d43aa7bef95c57e79d, type: 3}
