@@ -63,7 +63,7 @@ public class GuyMovement : Singleton<GuyMovement>
         {
             IsInControl = !value;
             sr.sprite = value ? haltSprite : _originalSprite;
-            BackgroundMusic.Instance.IsPaused = IsHalted;
+            BackgroundMusic.Instance.IsScratched = IsHalted;
         }
     }
 

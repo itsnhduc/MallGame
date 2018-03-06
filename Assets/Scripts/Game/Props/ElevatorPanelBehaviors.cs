@@ -37,15 +37,6 @@ public class ElevatorPanelBehaviors : MonoBehaviour
     {
         if (IsActive)
         {
-            // escape
-            bool esc = Input.GetKeyDown(KeyCode.Escape);
-            if (esc)
-            {
-                IsActive = false;
-                ActiveFloor = -1;
-                GuyMovement.Instance.IsInControl = true;
-            }
-
             // select floor
             bool leftKey = Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A);
             bool rightKey = Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D);

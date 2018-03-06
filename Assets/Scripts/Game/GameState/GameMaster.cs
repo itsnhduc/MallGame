@@ -8,8 +8,9 @@ public class GameMaster : Singleton<GameMaster>
 {
     public GameObject StartOverlay;
     public GameObject EndOverlay;
+    public GameObject PauseOverlay;
 
-    public enum GameState { BeforeGame, InGame, AfterGame }
+    public enum GameState { BeforeGame, InGame, PausedGame, AfterGame }
 
     private GameState _state;
     public GameState State
@@ -17,10 +18,12 @@ public class GameMaster : Singleton<GameMaster>
         get { return _state; }
         set
         {
-		    GuyMovement.Instance.IsInControl = value == GameState.InGame;
+            GuyMovement.Instance.IsInControl = value == GameState.InGame;
             PhoneBehaviors.Instance.IsEnabled = value == GameState.InGame;
+            BackgroundMusic.Instance.IsPaused = value == GameState.PausedGame;
             StartOverlay.SetActive(value == GameState.BeforeGame);
             EndOverlay.SetActive(value == GameState.AfterGame);
+            PauseOverlay.SetActive(value == GameState.PausedGame);
             _state = value;
         }
     }
@@ -28,5 +31,14 @@ public class GameMaster : Singleton<GameMaster>
     void Start()
     {
         State = GameState.BeforeGame;
+    }
+
+    void Update()
+    {
+        if (State == GameState.InGame)
+        {
+            bool pauseKey = Input.GetKeyDown(KeyCode.Escape);
+            if (pauseKey) State = GameState.PausedGame;
+        }
     }
 }

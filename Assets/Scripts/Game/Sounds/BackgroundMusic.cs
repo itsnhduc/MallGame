@@ -21,7 +21,6 @@ public class BackgroundMusic : Singleton<BackgroundMusic>
             if (value)
             {
                 src.Pause();
-                SoundSource.Instance.Src.PlayOneShot(scratchSound);
                 src.volume = 0;
             }
             else
@@ -29,6 +28,15 @@ public class BackgroundMusic : Singleton<BackgroundMusic>
                 src.UnPause();
                 StartCoroutine(FadeIn());
             }
+        }
+    }
+
+    public bool IsScratched
+    {
+        set
+        {
+            IsPaused = value;
+            if (value) SoundSource.Instance.Src.PlayOneShot(scratchSound);
         }
     }
 
