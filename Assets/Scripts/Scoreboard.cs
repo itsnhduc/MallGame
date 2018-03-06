@@ -94,7 +94,8 @@ public class Scoreboard : MonoBehaviour {
 
   private void ChangePage() {
     int startIndex = page * NO_ITEM_PER_PAGE;
-    int count = records.Count - startIndex - 1 >= NO_ITEM_PER_PAGE ? NO_ITEM_PER_PAGE : records.Count % NO_ITEM_PER_PAGE;
+    int count = records.Count - startIndex >= NO_ITEM_PER_PAGE ? NO_ITEM_PER_PAGE : records.Count % NO_ITEM_PER_PAGE;
+    Debug.Log(startIndex + "-" + count);
     List<Record> pageData = records.GetRange(startIndex, count);
     UpdateEntries(pageData);
     UpdatePageNumber();
