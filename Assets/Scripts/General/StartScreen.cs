@@ -8,12 +8,14 @@ public class StartScreen : MonoBehaviour {
 
   public Button startGameBtn;
   public Button leaderboardBtn;
+  public Button creditBtn;
 
 	// Use this for initialization
 	void Start () {
 
     startGameBtn.onClick.AddListener(OnStartGame);
     leaderboardBtn.onClick.AddListener(OnLeaderboard);
+    creditBtn.onClick.AddListener(OnCredit);
     if (Debug.isDebugBuild) {
       Debug.Log("Initializing game in Development...");
       PlayerPrefs.DeleteAll();
@@ -34,6 +36,11 @@ public class StartScreen : MonoBehaviour {
   private void OnLeaderboard() {
     Debug.Log("Loading Leaderboard...");
     SceneManager.LoadScene("Leaderboard");
+  }
+
+  private void OnCredit() {
+    Debug.Log("Loading Credit...");
+    SceneManager.LoadScene("Credit");
   }
 
 }
