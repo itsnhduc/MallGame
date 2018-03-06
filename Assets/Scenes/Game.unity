@@ -1823,7 +1823,7 @@ Prefab:
     - target: {fileID: 114434546149881556, guid: d4fb0b27dc151b24f8dc8cf4a2219e24,
         type: 2}
       propertyPath: productName
-      value: Reason Why She's Late
+      value: Mirror
       objectReference: {fileID: 0}
     - target: {fileID: 114434546149881556, guid: d4fb0b27dc151b24f8dc8cf4a2219e24,
         type: 2}
@@ -2189,8 +2189,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 243960356}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.054, y: 0.001, z: 0}
-  m_LocalScale: {x: 1.9725041, y: 2.01, z: 1}
+  m_LocalPosition: {x: 0.008, y: 0.001, z: 0}
+  m_LocalScale: {x: 1.9892899, y: 2.01, z: 1}
   m_Children:
   - {fileID: 714965699}
   - {fileID: 1107152834}
@@ -4204,7 +4204,7 @@ Prefab:
     - target: {fileID: 114434546149881556, guid: d4fb0b27dc151b24f8dc8cf4a2219e24,
         type: 2}
       propertyPath: productName
-      value: Nose Bleeding
+      value: '"Nose Bleeding"'
       objectReference: {fileID: 0}
     - target: {fileID: 114434546149881556, guid: d4fb0b27dc151b24f8dc8cf4a2219e24,
         type: 2}
@@ -4707,7 +4707,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &597452034
 Prefab:
@@ -4766,7 +4766,7 @@ Prefab:
     - target: {fileID: 114434546149881556, guid: d4fb0b27dc151b24f8dc8cf4a2219e24,
         type: 2}
       propertyPath: productName
-      value: Her Nightmare
+      value: '"Her Nightmare"'
       objectReference: {fileID: 0}
     - target: {fileID: 114434546149881556, guid: d4fb0b27dc151b24f8dc8cf4a2219e24,
         type: 2}
@@ -6575,8 +6575,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 855492208}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.039, y: 29.997, z: 0}
-  m_LocalScale: {x: 1.1468956, y: 0.84147847, z: 1}
+  m_LocalPosition: {x: -0.007, y: 30.043, z: 0}
+  m_LocalScale: {x: 1.156738, y: 0.8539541, z: 1}
   m_Children:
   - {fileID: 848962272}
   - {fileID: 473694447}
@@ -8637,7 +8637,7 @@ Prefab:
     - target: {fileID: 114434546149881556, guid: d4fb0b27dc151b24f8dc8cf4a2219e24,
         type: 2}
       propertyPath: productName
-      value: Bathroom Collection
+      value: Shampoo Collections
       objectReference: {fileID: 0}
     - target: {fileID: 114434546149881556, guid: d4fb0b27dc151b24f8dc8cf4a2219e24,
         type: 2}
@@ -10557,7 +10557,7 @@ Prefab:
     - target: {fileID: 114434546149881556, guid: d4fb0b27dc151b24f8dc8cf4a2219e24,
         type: 2}
       propertyPath: productName
-      value: Massacre
+      value: '"Massacre"'
       objectReference: {fileID: 0}
     - target: {fileID: 114434546149881556, guid: d4fb0b27dc151b24f8dc8cf4a2219e24,
         type: 2}
@@ -13087,7 +13087,7 @@ Prefab:
     - target: {fileID: 114434546149881556, guid: d4fb0b27dc151b24f8dc8cf4a2219e24,
         type: 2}
       propertyPath: productName
-      value: Her Unique Smell
+      value: '"Her Wonderful Smell"'
       objectReference: {fileID: 0}
     - target: {fileID: 114434546149881556, guid: d4fb0b27dc151b24f8dc8cf4a2219e24,
         type: 2}
@@ -14003,7 +14003,7 @@ Prefab:
     - target: {fileID: 114434546149881556, guid: d4fb0b27dc151b24f8dc8cf4a2219e24,
         type: 2}
       propertyPath: productName
-      value: Tissues For Korean Drama
+      value: Tissues (For Korean Drama)
       objectReference: {fileID: 0}
     - target: {fileID: 114434546149881556, guid: d4fb0b27dc151b24f8dc8cf4a2219e24,
         type: 2}
