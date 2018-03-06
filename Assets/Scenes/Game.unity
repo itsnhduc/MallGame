@@ -2376,6 +2376,8 @@ MonoBehaviour:
   happyDuration: 2
   shakeAngle: 8
   shakeInterval: 0.25
+  smileSprite: {fileID: 21300014, guid: d0830e63ec2330f489eac64b2fba8a60, type: 3}
+  smileRange: 5
 --- !u!1001 &299516887
 Prefab:
   m_ObjectHideFlags: 0
@@ -10403,6 +10405,8 @@ MonoBehaviour:
   haltDuration: 2.5
   tiredSprite: {fileID: 21300008, guid: d0830e63ec2330f489eac64b2fba8a60, type: 3}
   haltSprite: {fileID: 21300004, guid: d0830e63ec2330f489eac64b2fba8a60, type: 3}
+  smileSprite: {fileID: 21300012, guid: d0830e63ec2330f489eac64b2fba8a60, type: 3}
+  smileRange: 6
 --- !u!50 &1306325149
 Rigidbody2D:
   serializedVersion: 4

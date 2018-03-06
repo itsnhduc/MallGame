@@ -15,6 +15,8 @@ public class GuyMovement : Singleton<GuyMovement>
     public float haltDuration;
     public Sprite tiredSprite;
     public Sprite haltSprite;
+    public Sprite smileSprite;
+    public float smileRange;
 
     public float SpeedOffset { get; set; }
     public bool IsInControl { get; set; }
@@ -79,8 +81,17 @@ public class GuyMovement : Singleton<GuyMovement>
         get { return sr.sprite == tiredSprite; }
         set
         {
-            if (!IsHalted) sr.sprite = value ? tiredSprite : _originalSprite;
+            if (!IsHalted && !IsSmiling) sr.sprite = value ? tiredSprite : _originalSprite;
             BackgroundMusic.Instance.Pitch = value ? TrueSpeed / speed : 1;
+        }
+    }
+
+    bool IsSmiling
+    {
+        get { return sr.sprite == smileSprite; }
+        set
+        {
+            sr.sprite = value ? smileSprite : _originalSprite;
         }
     }
 
@@ -108,6 +119,12 @@ public class GuyMovement : Singleton<GuyMovement>
         else
         {
             MoveDirection = Vector2.zero;
+        }
+
+        if (!IsTired && !IsHalted)
+        {
+            Vector2 diff = transform.position - GalBehaviors.Instance.transform.position; 
+            IsSmiling = Mathf.Abs(diff.y) < 1 && Mathf.Abs(diff.x) <= smileRange;
         }
     }
 
