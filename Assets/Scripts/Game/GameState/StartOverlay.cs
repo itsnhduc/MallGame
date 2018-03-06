@@ -10,7 +10,7 @@ public class StartOverlay : MonoBehaviour
     public AudioClip countdownSound;
     
 
-    void Start()
+    void OnEnable()
     {
         Time.timeScale = 1;
         StartCoroutine(CountDown());
