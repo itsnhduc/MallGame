@@ -16,11 +16,15 @@ public class StartOverlay : MonoBehaviour
 
     IEnumerator CountDown()
     {
-        SoundSource.Instance.Src.PlayOneShot(countdownSound);
-        for (int i = 3; i >= -1; i--)
+        for (int i = 4; i >= -1; i--)
         {
-            if (i == -1) GameMaster.Instance.State = GameMaster.GameState.InGame;
-            else num.Text = i != 0 ? i.ToString() : "Start!";
+            if (i == 4) num.Text = "Get Ready";
+            else
+            {
+                if (i == 3) SoundSource.Instance.Src.PlayOneShot(countdownSound);
+                if (i == -1) GameMaster.Instance.State = GameMaster.GameState.InGame;
+                else num.Text = i != 0 ? i.ToString() : "Start!";
+            }
             yield return new WaitForSeconds(1);
         }
 

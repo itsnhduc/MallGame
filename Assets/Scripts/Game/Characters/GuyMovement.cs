@@ -62,6 +62,7 @@ public class GuyMovement : Singleton<GuyMovement>
         set
         {
             IsInControl = !value;
+            PhoneBehaviors.Instance.IsEnabled = !value;
             sr.sprite = value ? haltSprite : _originalSprite;
             BackgroundMusic.Instance.IsScratched = IsHalted;
         }
