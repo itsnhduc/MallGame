@@ -20,7 +20,7 @@ public class GameMaster : Singleton<GameMaster>
         {
             GuyMovement.Instance.IsInControl = value == GameState.InGame;
             PhoneBehaviors.Instance.IsEnabled = value == GameState.InGame;
-            BackgroundMusic.Instance.IsPaused = value == GameState.PausedGame;
+            BackgroundMusic.Instance.IsPaused = value == GameState.PausedGame || value == GameState.AfterGame;
             StartOverlay.SetActive(value == GameState.BeforeGame);
             EndOverlay.SetActive(value == GameState.AfterGame);
             PauseOverlay.SetActive(value == GameState.PausedGame);

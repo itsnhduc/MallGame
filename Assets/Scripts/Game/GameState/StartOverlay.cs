@@ -8,9 +8,11 @@ public class StartOverlay : MonoBehaviour
 {
     public CountdownNumber num;
     public AudioClip countdownSound;
+    
 
     void Start()
     {
+        Time.timeScale = 1;
         StartCoroutine(CountDown());
     }
 
