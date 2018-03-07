@@ -5,6 +5,8 @@
 [Bb]uilds/
 Assets/AssetStoreTools*
 ProjectSettings/ProjectVersion.txt
+ProjectSettings/GraphicsSettings.asset
+ProjectSettings/ProjectSettings.asset
 
 # Visual Studio 2015 cache directory
 /.vs/
