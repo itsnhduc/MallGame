@@ -213,6 +213,7 @@ public class Scoreboard : MonoBehaviour
       for (int i = 0; i < length; i++) {
         Record record = records[i];
         if (record.name == playerName) {
+          record.rank = i + 1;
           return record;
         }
       }
