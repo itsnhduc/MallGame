@@ -9,14 +9,11 @@ public class HightlightSelection : MonoBehaviour
 {
 	public Button[] options;
     public GameObject highlight;
-    public float offsetY;
 
-    private Vector3 _originalPos;
     private static int _index = 0;
 
     void Start()
     {
-        _originalPos = highlight.transform.localPosition;
 		_AdvanceIndex(0);
     }
 
@@ -33,7 +30,11 @@ public class HightlightSelection : MonoBehaviour
     private void _AdvanceIndex(int num)
     {
         _index = (_index + num + options.Count()) % options.Count();
-        float posY = _index * offsetY;
-        highlight.transform.localPosition = _originalPos + new Vector3(0, posY, 0);
+        _SetIndex();
+    }
+
+    private void _SetIndex()
+    {
+        highlight.transform.position = options[_index].transform.position;
     }
 }

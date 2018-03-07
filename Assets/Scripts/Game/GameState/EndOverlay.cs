@@ -39,7 +39,7 @@ public class EndOverlay : MonoBehaviour
             if (www.isNetworkError || www.isHttpError) Debug.Log(www.error);
             else if (www.isDone)
             {
-                PlayerAddResponse response = JsonUtility.FromJson<PlayerAddResponse>(www.downloadHandler.text);
+                JsonUtility.FromJson<PlayerAddResponse>(www.downloadHandler.text);
             }
         }
     }
