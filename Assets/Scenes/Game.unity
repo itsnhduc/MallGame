@@ -13550,7 +13550,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '[R] Restart'
+  m_Text: '[E] Back to Main Menu'
 --- !u!222 &1646800290
 CanvasRenderer:
   m_ObjectHideFlags: 0
