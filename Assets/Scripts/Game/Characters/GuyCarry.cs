@@ -24,6 +24,11 @@ public class GuyCarry : Singleton<GuyCarry>
         _UpdateWeight();
     }
 
+    public bool Has(Product product)
+    {
+        return storage.items.Find(p => p.productName == product.productName) != null;
+    }
+
     public void Clear()
     {
         while (transform.childCount != 0)
