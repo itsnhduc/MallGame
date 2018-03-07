@@ -1807,7 +1807,7 @@ Prefab:
     - target: {fileID: 114434546149881556, guid: d4fb0b27dc151b24f8dc8cf4a2219e24,
         type: 2}
       propertyPath: productName
-      value: 2018 Trending Purse
+      value: Trending Purse
       objectReference: {fileID: 0}
     - target: {fileID: 114434546149881556, guid: d4fb0b27dc151b24f8dc8cf4a2219e24,
         type: 2}
@@ -14153,7 +14153,7 @@ Prefab:
     - target: {fileID: 114434546149881556, guid: d4fb0b27dc151b24f8dc8cf4a2219e24,
         type: 2}
       propertyPath: productName
-      value: Tissues (For Korean Drama)
+      value: Tissues
       objectReference: {fileID: 0}
     - target: {fileID: 114434546149881556, guid: d4fb0b27dc151b24f8dc8cf4a2219e24,
         type: 2}
@@ -16849,7 +16849,7 @@ Prefab:
     - target: {fileID: 114434546149881556, guid: d4fb0b27dc151b24f8dc8cf4a2219e24,
         type: 2}
       propertyPath: productName
-      value: Suit For Job Interview
+      value: Formal Suit
       objectReference: {fileID: 0}
     - target: {fileID: 114434546149881556, guid: d4fb0b27dc151b24f8dc8cf4a2219e24,
         type: 2}
