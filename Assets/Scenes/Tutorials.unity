@@ -1653,8 +1653,8 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 'As you pick up more items, your movement will become slower and your stamina
-    will drop faster. BEWARE: When your stamina drops to zero, you will fall over,
-    break all your current items and have to buy them again !!!'
+    will drop faster. BEWARE: When your stamina drops to zero, you will experience
+    a short breakdown.'
 --- !u!222 &897514063
 CanvasRenderer:
   m_ObjectHideFlags: 0
