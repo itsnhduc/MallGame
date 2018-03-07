@@ -6037,7 +6037,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8c7fa32168fac146a16fd9551f4eb81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  showOffsetY: 1000
+  showOffsetY: 800
   speedMultiplier: 10
 --- !u!1 &791130065
 GameObject:
