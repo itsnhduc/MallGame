@@ -10,15 +10,15 @@ public class ElevatorPanelBehaviors : MonoBehaviour
 
     SpriteRenderer sp { get { return GetComponent<SpriteRenderer>(); } }
 
-    public bool IsActive
-    {
-        get { return sp.enabled; }
-        set
-        {
-            sp.enabled = value;
-            PhoneBehaviors.Instance.IsEnabled = !value;
-        }
-    }
+    // public bool IsActive
+    // {
+    //     get { return sp.enabled; }
+    //     set
+    //     {
+    //         sp.enabled = value;
+    //         PhoneBehaviors.Instance.IsEnabled = !value;
+    //     }
+    // }
 
     private int _activeFloor;
     public int ActiveFloor
@@ -35,8 +35,8 @@ public class ElevatorPanelBehaviors : MonoBehaviour
 
     void Update()
     {
-        if (IsActive)
-        {
+        // if (IsActive)
+        // {
             // select floor
             bool leftKey = Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A);
             bool rightKey = Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D);
@@ -51,9 +51,11 @@ public class ElevatorPanelBehaviors : MonoBehaviour
                 GuyMovement.Instance.Floor = ActiveFloor;
                 ActiveFloor = -1;
                 GuyMovement.Instance.IsInControl = true;
-                IsActive = false;
+                // IsActive = false;
                 DialogService.Instance.Clear();
+                gameObject.SetActive(false);
+                FindObjectsOfType<ElevatorBehaviors>().ToList().Find(e => e.IsBeingUsed).IsBeingUsed = false;
             }
-        }
+        // }
     }
 }

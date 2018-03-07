@@ -7,13 +7,28 @@ using UnityEngine;
 public class ElevatorBehaviors : Interactable
 {
     public int floor;
+    public ElevatorPanelBehaviors elevatorPanel;
 
-    ElevatorPanelBehaviors elevatorPanel { get { return FindObjectOfType<ElevatorPanelBehaviors>(); } }
+    private bool _isBeingUsed = false;
+    public bool IsBeingUsed
+    {
+        get { return _isBeingUsed; }
+        set { _isBeingUsed = value; }
+    }
 
     public override void Activate()
     {
-        GuyMovement.Instance.IsInControl = false;
-        elevatorPanel.IsActive = true;
-        elevatorPanel.ActiveFloor = floor;
+        if (!IsBeingUsed)
+        {
+            GuyMovement.Instance.IsInControl = false;
+            elevatorPanel.gameObject.SetActive(true);
+            elevatorPanel.ActiveFloor = floor;
+            IsBeingUsed = true;
+        }
+    }
+
+    public override void Hover()
+    {
+        DialogService.Instance.Show("[E/Enter] Use elevator");
     }
 }
