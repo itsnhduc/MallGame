@@ -4,13 +4,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class HightlightSelection : MonoBehaviour
 {
-	public Button[] options;
-    public GameObject highlight;
+    public Button[] options;
+    public Highlight highlight;
 
-    private static int _index = 0;
+    private int _index = 0;
 
     void Start()
     {
@@ -23,8 +24,12 @@ public class HightlightSelection : MonoBehaviour
         bool downKey = Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow);
         if (upKey || downKey) _AdvanceIndex(upKey ? -1 : 1);
 
-		bool useKey = Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Return);
-		if (useKey) options[_index].onClick.Invoke();
+        bool useKey = Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Return);
+        if (useKey)
+        {
+            options[_index].onClick.Invoke();
+            highlight.SetProgressCircle(true);
+        }
     }
 
     private void _AdvanceIndex(int num)

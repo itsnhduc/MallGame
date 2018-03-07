@@ -6,10 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class StartScreen : MonoBehaviour
 {
-
     void Start()
     {
-
         if (Debug.isDebugBuild)
         {
             print("Initializing game in Development...");
@@ -24,24 +22,28 @@ public class StartScreen : MonoBehaviour
         {
             string playerName = PlayerPrefs.GetString("playerName");
             print("Starting Game as " + playerName + "...");
-            SceneManager.LoadScene("Game");
+            _LoadScene("Game");
         }
         else
         {
-            SceneManager.LoadScene("UserInput");
+            _LoadScene("UserInput");
         }
     }
 
     public void OnLeaderboard()
     {
-        print("Loading Leaderboard...");
-        SceneManager.LoadScene("Leaderboard");
+        _LoadScene("Leaderboard");
     }
 
     public void OnCredit()
     {
-        print("Loading Credit...");
-        SceneManager.LoadScene("Credit");
+        _LoadScene("Credit");
+    }
+
+    private void _LoadScene(string sceneName)
+    {
+        print("Loading " + sceneName + "...");
+        SceneManager.LoadScene(sceneName);
     }
 
 }
