@@ -15,6 +15,7 @@ public class Scoreboard : MonoBehaviour
     public Button prevBtn;
     public Button nextBtn;
     public Text pageNumber;
+    public GameObject yourScoreboardItem;
 
     private List<GameObject> playerScoreboardItems = new List<GameObject>();
     private List<Record> records;
@@ -24,6 +25,7 @@ public class Scoreboard : MonoBehaviour
     void Start()
     {
 
+        ClearEntry(yourScoreboardItem);
         for (int i = 0; i < NO_ITEM_PER_PAGE; i++)
         {
             GameObject go = (GameObject)Instantiate(playerScoreboardItemPrefab, this.transform);
@@ -66,7 +68,7 @@ public class Scoreboard : MonoBehaviour
                         {
                             records = response.data;
                             int recordLength = records.Count;
-                            lastPage = recordLength / NO_ITEM_PER_PAGE - (recordLength % NO_ITEM_PER_PAGE != 0 ? 0 : 1);
+                            lastPage = (recordLength == 0) ? 0 : recordLength / NO_ITEM_PER_PAGE - (recordLength % NO_ITEM_PER_PAGE != 0 ? 0 : 1);
                             ChangePage();
                         }
                     }
@@ -91,7 +93,7 @@ public class Scoreboard : MonoBehaviour
         return page == 0;
     }
 
-    private void NextPage()
+    public void NextPage()
     {
         if (!IsLastPage())
         {
@@ -100,7 +102,7 @@ public class Scoreboard : MonoBehaviour
         ChangePage();
     }
 
-    private void PrevPage()
+    public void PrevPage()
     {
         if (!IsFirstPage())
         {
@@ -116,6 +118,7 @@ public class Scoreboard : MonoBehaviour
         Debug.Log(startIndex + "-" + count);
         List<Record> pageData = records.GetRange(startIndex, count);
         UpdateEntries(pageData);
+        UpdateYourRecord();
         UpdatePageNumber();
     }
 
@@ -193,6 +196,27 @@ public class Scoreboard : MonoBehaviour
             GameObject go = playerScoreboardItems[i];
             ClearEntry(go);
         }
+    }
+
+    private void UpdateYourRecord() {
+      Record yourRecord = GetYourRecord();
+      if (yourRecord == null) {
+        ClearEntry(yourScoreboardItem);
+      } else {
+        SetEntry(yourScoreboardItem, yourRecord);
+      }
+    }
+
+    private Record GetYourRecord() {
+      string playerName = PlayerPrefs.GetString("playerName");
+      int length = records.Count;
+      for (int i = 0; i < length; i++) {
+        Record record = records[i];
+        if (record.name == playerName) {
+          return record;
+        }
+      }
+      return null;
     }
 
 }
