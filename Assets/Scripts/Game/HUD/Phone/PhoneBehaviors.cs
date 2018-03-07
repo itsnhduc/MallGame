@@ -10,6 +10,7 @@ public class PhoneBehaviors : Singleton<PhoneBehaviors>
     public float speedMultiplier;
 
     private IEnumerator _thread;
+    private Vector2 _originalLocalPosition;
 
     public bool IsEnabled { get; set; }
 
@@ -33,6 +34,7 @@ public class PhoneBehaviors : Singleton<PhoneBehaviors>
 
     void Start()
     {
+        _originalLocalPosition = transform.localPosition;
         IsEnabled = true;
         IsShown = false;
     }
@@ -51,13 +53,13 @@ public class PhoneBehaviors : Singleton<PhoneBehaviors>
             yield return new WaitForEndOfFrame();
         }
         _isShown = isShowing;
-        Vector2 targetPos = (Vector2)transform.position + new Vector2(0, showOffsetY * (isShowing ? 1 : -1));
+        Vector2 targetPos = _originalLocalPosition + new Vector2(0, isShowing ? showOffsetY : 0);
         float timeDelta = 0.01f;
         float timePassed = 0;
         while (timePassed < 1)
         {
             timePassed += timeDelta * speedMultiplier;
-            transform.position = Vector2.Lerp(transform.position, targetPos, timePassed);
+            transform.localPosition = Vector2.Lerp(transform.localPosition, targetPos, timePassed);
             yield return new WaitForSeconds(timeDelta);
         }
     }

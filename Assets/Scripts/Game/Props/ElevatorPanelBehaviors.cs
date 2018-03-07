@@ -10,16 +10,6 @@ public class ElevatorPanelBehaviors : MonoBehaviour
 
     SpriteRenderer sp { get { return GetComponent<SpriteRenderer>(); } }
 
-    // public bool IsActive
-    // {
-    //     get { return sp.enabled; }
-    //     set
-    //     {
-    //         sp.enabled = value;
-    //         PhoneBehaviors.Instance.IsEnabled = !value;
-    //     }
-    // }
-
     private int _activeFloor;
     public int ActiveFloor
     {
@@ -35,27 +25,33 @@ public class ElevatorPanelBehaviors : MonoBehaviour
 
     void Update()
     {
-        // if (IsActive)
-        // {
-            // select floor
-            bool leftKey = Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A);
-            bool rightKey = Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D);
-            int offset = leftKey ? -1 : (rightKey ? 1 : 0);
-            ActiveFloor = (ActiveFloor + offset + transform.childCount) % transform.childCount;
+        // select floor
+        bool leftKey = Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A);
+        bool rightKey = Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D);
+        int offset = leftKey ? -1 : (rightKey ? 1 : 0);
+        ActiveFloor = (ActiveFloor + offset + transform.childCount) % transform.childCount;
 
-            // move to floor
-            bool useKey = Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Return);
-            if (useKey)
-            {
-                SoundSource.Instance.Src.PlayOneShot(elevatorDingSound);
-                GuyMovement.Instance.Floor = ActiveFloor;
-                ActiveFloor = -1;
-                GuyMovement.Instance.IsInControl = true;
-                // IsActive = false;
-                DialogService.Instance.Clear();
-                gameObject.SetActive(false);
-                FindObjectsOfType<ElevatorBehaviors>().ToList().Find(e => e.IsBeingUsed).IsBeingUsed = false;
-            }
-        // }
+        // move to floor
+        bool useKey = Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Return);
+        if (useKey)
+        {
+            SoundSource.Instance.Src.PlayOneShot(elevatorDingSound);
+            GuyMovement.Instance.Floor = ActiveFloor;
+            ActiveFloor = -1;
+            GuyMovement.Instance.IsInControl = true;
+            DialogService.Instance.Clear();
+            gameObject.SetActive(false);
+            FindObjectsOfType<ElevatorBehaviors>().ToList().Find(e => e.IsBeingUsed).IsBeingUsed = false;
+        }
+    }
+
+    void OnEnable()
+    {
+        FindObjectOfType<PhoneBehaviors>().IsEnabled = false;
+    }
+
+    void OnDisable()
+    {
+        FindObjectOfType<PhoneBehaviors>().IsEnabled = true;
     }
 }
