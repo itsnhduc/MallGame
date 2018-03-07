@@ -14,6 +14,6 @@ public class TotalWeightFinal : MonoBehaviour
     void Start()
     {
 		t.text = TotalWeightDisplay.Instance.Value + tail;
-        FindObjectOfType<EndScene>().setEndScene(TotalWeightDisplay.Instance.Value);
+        FindObjectOfType<EndScene>().SetEndScene(TotalWeightDisplay.Instance.Value);
     }
 }
