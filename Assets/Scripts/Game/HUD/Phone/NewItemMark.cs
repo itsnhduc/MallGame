@@ -36,6 +36,7 @@ public class NewItemMark : Singleton<NewItemMark>
                 _thread = Blink();
                 StartCoroutine(_thread);
             }
+            FindObjectOfType<DangerOverlay>().IsShown = value;
             _isUrgent = value;
         }
     }

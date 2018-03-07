@@ -81,10 +81,6 @@ public class Product : Interactable
     {
         DialogService.Instance.Show(productName + Environment.NewLine + "[E/Enter] Buy Item");
     }
-    public override void Exit()
-    {
-        DialogService.Instance.Clear();
-    }
 
     IEnumerator Buy()
     {

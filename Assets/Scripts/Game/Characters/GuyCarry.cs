@@ -24,6 +24,11 @@ public class GuyCarry : Singleton<GuyCarry>
         _UpdateWeight();
     }
 
+    public bool Has(Product product)
+    {
+        return storage.items.Find(p => p.productName == product.productName) != null;
+    }
+
     public void Clear()
     {
         while (transform.childCount != 0)
@@ -36,10 +41,11 @@ public class GuyCarry : Singleton<GuyCarry>
 
     private void _UpdateWeight()
     {
+        WeightInHandDisplay.Instance.Value = _GetTotalWeight();
         GuyMovement.Instance.SpeedOffset = -1 * _GetTotalWeight() * weightMultiplier;
     }
 
-    private float _GetTotalWeight()
+    private int _GetTotalWeight()
     {
         return storage.items.Select(p => p.weight).Sum();
     }

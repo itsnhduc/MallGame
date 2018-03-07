@@ -30,6 +30,10 @@ public class StartScreen : MonoBehaviour
         }
     }
 
+    public void OnTutorials() {
+        _LoadScene("Tutorials");
+    }
+
     public void OnLeaderboard()
     {
         _LoadScene("Leaderboard");

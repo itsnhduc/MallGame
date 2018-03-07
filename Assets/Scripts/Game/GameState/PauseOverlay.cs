@@ -15,15 +15,15 @@ public class PauseOverlay : MonoBehaviour
     void Update()
     {
 		bool resumeKey = Input.GetKeyDown(KeyCode.Escape);
-		bool restartKey = Input.GetKeyDown(KeyCode.R);
+		bool exitKey = Input.GetKeyDown(KeyCode.E);
 		if (resumeKey)
 		{
 			GameMaster.Instance.State = GameMaster.GameState.InGame;
 			Time.timeScale = 1;
 		}
-		else if (restartKey)
+		else if (exitKey)
 		{
-			SceneManager.LoadScene("Game");
+			SceneManager.LoadScene("MainMenu");
 		}
     }
 }

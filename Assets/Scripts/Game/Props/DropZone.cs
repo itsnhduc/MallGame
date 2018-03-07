@@ -32,8 +32,4 @@ public class DropZone : Interactable
 			DialogService.Instance.Show("[E/Enter] Drop " + guyCarry.Items.Count + " items");
 		}
 	}
-    public override void Exit()
-    {
-        DialogService.Instance.Clear();
-    }
 }

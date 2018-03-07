@@ -12,6 +12,7 @@ public class Spawner : Singleton<Spawner>
     public float spawnDurationDecay;
     public float urgentThreshold;
     public float deadThreshold;
+    public float maxSpawnTries;
     public AudioClip newItemSound;
 
     public List<Product> products { get; private set; }
@@ -33,17 +34,28 @@ public class Spawner : Singleton<Spawner>
             var remainingItems = products.Where(p => !p.Spawned);
             if (remainingItems.Count() > 0)
             {
-                Product nextItem = PickNextItem(remainingItems);
-                nextItem.Spawned = true;
-                ItemList.Instance.Add(nextItem.productName, nextItem.icon);
-                NewItemMark.Instance.IsShown = true;
-                int spawnedCount = products.Where(p => p.Spawned).Count();
-                NewItemMark.Instance.IsUrgent = spawnedCount > urgentThreshold;
-                if (spawnedCount > deadThreshold)
+                Product nextItem = null;
+                int tries = 0;
+                do
                 {
-                    GameMaster.Instance.State = GameMaster.GameState.AfterGame;
+                    nextItem = PickNextItem(remainingItems);
+                    tries++;
                 }
-                SoundSource.Instance.Src.PlayOneShot(newItemSound);
+                while (tries <= maxSpawnTries && GuyCarry.Instance.Has(nextItem));
+
+                if (tries <= maxSpawnTries && nextItem != null)
+                {
+                    nextItem.Spawned = true;
+                    ItemList.Instance.Add(nextItem.productName, nextItem.icon);
+                    NewItemMark.Instance.IsShown = true;
+                    int spawnedCount = products.Where(p => p.Spawned).Count();
+                    NewItemMark.Instance.IsUrgent = spawnedCount > urgentThreshold;
+                    if (spawnedCount > deadThreshold)
+                    {
+                        GameMaster.Instance.State = GameMaster.GameState.AfterGame;
+                    }
+                    SoundSource.Instance.Src.PlayOneShot(newItemSound);
+                }
             }
             yield return new WaitForSeconds(_spawnDuration);
             if (_spawnDuration > minSpawnDuration)

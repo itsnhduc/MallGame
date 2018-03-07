@@ -61,6 +61,9 @@ public abstract class Interactable : MonoBehaviour
     }
 
     public virtual void Hover() { }
-    public virtual void Exit() { }
+    public virtual void Exit()
+    {
+        DialogService.Instance.Clear();
+    }
     public abstract void Activate();
 }
