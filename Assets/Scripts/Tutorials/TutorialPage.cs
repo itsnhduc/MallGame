@@ -12,14 +12,14 @@ public class TutorialPage : MonoBehaviour
 
     void Update()
 	{
-		bool useKey = Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Return);
-		if (useKey)
+		bool forwardKey = Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow);
+        bool backwardKey = Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow);
+        if (forwardKey)
         {
             if (curPage < 6)
             {
                 tutPages[curPage].gameObject.SetActive(false);
                 curPage++;
-                print(curPage);
                 tutPages[curPage].gameObject.SetActive(true);
             }
             else
@@ -30,5 +30,14 @@ public class TutorialPage : MonoBehaviour
                 SceneManager.LoadScene("MainMenu");
             }
         }
-	}
+        if (backwardKey)
+        {
+            if (curPage > 0)
+            {
+                tutPages[curPage].gameObject.SetActive(false);
+                curPage--;
+                tutPages[curPage].gameObject.SetActive(true);
+            }
+        }
+    }
 }
