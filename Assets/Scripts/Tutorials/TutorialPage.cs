@@ -16,19 +16,13 @@ public class TutorialPage : MonoBehaviour
         bool backwardKey = Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow);
         if (forwardKey)
         {
-            if (curPage < 6)
+            if (curPage < tutPages.Count() - 1)
             {
                 tutPages[curPage].gameObject.SetActive(false);
                 curPage++;
                 tutPages[curPage].gameObject.SetActive(true);
             }
-            else
-            {
-                tutPages[curPage].gameObject.SetActive(false);
-                curPage = 0;
-                tutPages[curPage].gameObject.SetActive(true);
-                SceneManager.LoadScene("MainMenu");
-            }
+            else SceneManager.LoadScene("MainMenu");
         }
         if (backwardKey)
         {
