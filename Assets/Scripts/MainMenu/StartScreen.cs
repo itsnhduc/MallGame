@@ -7,12 +7,24 @@ using UnityEngine.Networking;
 
 public class StartScreen : MonoBehaviour
 {
+
+    private const string RETURNING_PLAYER_MSG = "Welcome back, ";
+    private const string NEW_PLAYER_MSG = "Hello, new player!";
+
+    public Text greetByName;
+
     void Start()
     {
         if (Debug.isDebugBuild)
         {
             print("Initializing game in Development...");
             PlayerPrefs.DeleteAll();
+        }
+        if (PlayerPrefs.HasKey("playerName")) {
+            string playerName = PlayerPrefs.GetString("playerName");
+            greetByName.text = RETURNING_PLAYER_MSG + playerName;
+        } else {
+            greetByName.text = NEW_PLAYER_MSG;
         }
 
     }
