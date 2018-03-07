@@ -14,7 +14,7 @@ public class HightlightSelection : MonoBehaviour
 
     void Start()
     {
-		_AdvanceIndex(0);
+        _RefreshPosition();
     }
 
     void Update()
@@ -30,11 +30,17 @@ public class HightlightSelection : MonoBehaviour
     private void _AdvanceIndex(int num)
     {
         _index = (_index + num + options.Count()) % options.Count();
-        _SetIndex();
+        _RefreshPosition();
     }
 
-    private void _SetIndex()
+    private void _RefreshPosition()
     {
         highlight.transform.position = options[_index].transform.position;
+    }
+
+    public void OnHover(Button target)
+    {
+        _index = options.ToList().IndexOf(target);
+        _RefreshPosition();
     }
 }
