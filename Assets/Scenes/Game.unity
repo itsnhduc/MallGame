@@ -4396,7 +4396,7 @@ MonoBehaviour:
   doge: {fileID: 20593057}
   weed: {fileID: 421830536}
   dogeSound: {fileID: 8300000, guid: 3b456b3ce6f9e5246aceb7e0474d4825, type: 3}
-  triggerSpeed: 3
+  triggerSpeed: 3.3
   delayTime: 1
   duration: 5
 --- !u!1 &421830534
@@ -7535,8 +7535,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0009765825, y: -0.0002136188}
-  m_SizeDelta: {x: 1600.4, y: 900.24}
+  m_AnchoredPosition: {x: 0.00009155316, y: 4.2200554e-10}
+  m_SizeDelta: {x: 2403.9, y: 1352.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &797377986
 MonoBehaviour:
